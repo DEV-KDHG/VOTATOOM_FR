@@ -1,0 +1,15 @@
+.forms{
+    background-color: #EFEAEA;
+    padding: 3rem;
+    text-align: center;
+ 
+  
+}
+.containerForms{
+    display: flex;
+    justify-content: center;
+align-items: center;
+height: 80vh;
+margin: 0 auto;
+
+}
