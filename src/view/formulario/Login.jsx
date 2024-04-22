@@ -3,8 +3,8 @@ import styles from "./Forms.module.css";
 import Jtexfield from "../../shared/labels/Jtexfield";
 import Inpunts from "../../shared/inpunts/Inpunts";
 import Buto from "../../shared/buttons/Buto";
-import HeaderLogo from "../../Header/HeaderLogo";
-const Forms = () => {
+import HeaderLogo from "../../assets/components/Header/HeaderLogo";
+const Login = () => {
   return (
     <>
       <div className={styles.page}>
@@ -45,4 +45,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default Login;
