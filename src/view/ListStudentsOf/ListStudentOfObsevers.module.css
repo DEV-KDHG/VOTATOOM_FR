@@ -1,0 +1,51 @@
+body {
+  background-color: #d3d3d3; /* Color de fondo para el cuerpo */
+}
+
+.title {
+  text-align: center;
+  margin: 4rem 0 0 0;
+}
+
+.title .name {
+  font-weight: 600;
+  font-size: 3vw; /* Tamaño de fuente relativo */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #393450; /* Color de texto */
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Altura del contenedor de tablas */
+}
+
+.div1 {
+  overflow: scroll;
+  height: 300px; /* Altura específica para el contenedor de tabla con desplazamiento */
+  width: 80%; /* Ancho del contenedor de tabla */
+  margin-top: 20px; /* Espaciado superior */
+  background-color: lightgray; /* Color de fondo del contenedor de tabla */
+}
+
+.div1 table {
+  width: 100%; /* Ancho de la tabla dentro del contenedor */
+  background-color: lightgray; /* Color de fondo de la tabla */
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: antiquewhite;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  padding: 12px; /* Añadir relleno a los encabezados de columna */
+  font-size: 1.2em; /* Tamaño de fuente para los encabezados de columna */
+  color: #393450; /* Color de texto para los encabezados de columna */
+}
+
+td {
+  color: #393450; /* Color de texto para las celdas de datos */
+  padding: 0.7rem; /* Añadir relleno a las celdas de datos */
+  font-size: 1em; /* Tamaño de fuente para las celdas de datos */
+}
