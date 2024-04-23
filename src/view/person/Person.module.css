@@ -1,0 +1,18 @@
+.containerTarjet{
+    display: flex;
+    justify-content: center;
+align-items: center;
+height: 80vh;
+margin: 0 auto;
+}
+body{
+    background-color:#D3D3D3 ; 
+ }
+
+ .title
+ {
+    display: flex;
+ justify-content: center; 
+ align-items: center;
+ color:#393450;
+ }
