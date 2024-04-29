@@ -51,6 +51,9 @@ const AddStudent = () => {
 
   return (
     <div>
+       <div className="logo">
+          <HeaderLogo />
+        </div>
       <h2>Guardar Estudiante</h2>
       <form onSubmit={handleSubmit}>
         <div>

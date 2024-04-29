@@ -38,7 +38,9 @@ const ListStudents = () => {
 
   return (
     <div>
+
       {error && <p>{error}</p>}
+      <div>
       <table>
         <thead>
           <tr>
@@ -61,6 +63,9 @@ const ListStudents = () => {
           ))}
         </tbody>
       </table>
+
+      </div>
+      
     </div>
   );
 };

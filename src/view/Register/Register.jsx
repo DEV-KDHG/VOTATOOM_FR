@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Register.module.css';
 import axios from 'axios';
 import HeaderLogo from '../../Header/HeaderLogo';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const initialState = {
@@ -103,7 +104,9 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.btn}>
-                  <button type="submit">Registrarse</button>
+                  <button type="submit" onClick={()=>{
+                   window.location.href = '/login';
+                  }}>Registrarse</button>
                 </div>
               </form>
             </div>
