@@ -1,7 +1,7 @@
 import React from "react";
 import TarjetCandidates from "../../shared/tarjetCandidates/TarjetCandidates";
 import styles from "./Person.module.css";
-import HeaderLogo from "../../Header/HeaderLogo";
+import HeaderLogo from '../../Header/HeaderLogo';
 const Personero = () => {
   return (
     <>

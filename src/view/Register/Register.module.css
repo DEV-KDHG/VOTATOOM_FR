@@ -39,3 +39,23 @@ body{
  {
      margin:  0 auto;
  }
+ input {
+    background-color: #D3D3D3;
+    padding: 0.5rem;
+    border-color: black;
+    border-radius: 1rem;
+    margin: 10px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+button {
+    background-color: #59735F;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5rem;
+    border-color: white;
+    border-radius: 1rem;
+}

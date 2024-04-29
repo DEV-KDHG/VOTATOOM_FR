@@ -1,38 +1,111 @@
-import React from 'react'
-import styles from "./Register.module.css"
-import Jtexfield from "../../shared/labels/Jtexfield";
-import Inpunts from "../../shared/inpunts/Inpunts";
-import Buto from "../../shared/buttons/Buto";
-import HeaderLogo from "../../Header/HeaderLogo";
+import React, { useState } from 'react';
+import styles from './Register.module.css';
+import axios from 'axios';
+import HeaderLogo from '../../Header/HeaderLogo';
 
 const Register = () => {
+  const initialState = {
+    username: '',
+    name: '',
+    lastName: '',
+    identification: '',
+    password: ''
+  };
+
+  const [formData, setFormData] = useState(initialState);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8080/api/v2/register/admin', formData);
+      if (response.status === 200) {
+        const data = response.data;
+        localStorage.setItem('jwtToken', data.token);
+        console.log(data.token)
+        alert('usuario creado')
+      } else {
+        console.error('Registro fallido');
+      }
+    } catch (error) {
+      console.error('Error al procesar la solicitud:', error);
+    }
+  };
+
   return (
     <>
       <div className={styles.page}>
-        <div className="logo">
+        <div className={styles.logo}>
           <HeaderLogo />
         </div>
         <div className={styles.container}>
           <div className={styles.containerForms}>
             <div className={styles.title}>
-              <h1>Registrarse</h1>
+              <h1>Registrarse como Administrador</h1>
             </div>
             <div className={styles.formulario}>
-              <div className={styles.inps}>
-                <Jtexfield name={"Nombre"} />
-                <Inpunts name={"text"} placeholder={"xxxxx"} />
-              </div>
-              <div className={styles.inps}>
-                <Jtexfield name={"N° de identificación"} />
-                <Inpunts name={"text"} placeholder={"xxxxx"} />
-              </div>
-              <div className={styles.inps}>
-                <Jtexfield name={"digite su contraseña"} />
-                <Inpunts className={styles.inp} name={"pass"} placeholder={"xxxxx"} />
-              </div>
-              <div className={styles.btn}>
-                <Buto name={"Registrarse"} />
-              </div>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.inps}>
+                  <input
+                    type="text"
+                    placeholder="Nombre de usuario"
+                    value={formData.username}
+                    onChange={handleInputChange}
+                    name="username"
+                    required
+                  />
+                </div>
+                <div className={styles.inps}>
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    name="name"
+                    required
+                  />
+                </div>
+                <div className={styles.inps}>
+                  <input
+                    type="text"
+                    placeholder="Apellido"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    name="lastName"
+                    required
+                  />
+                </div>
+                <div className={styles.inps}>
+                  <input
+                    type="text"
+                    placeholder="Identificación"
+                    value={formData.identification}
+                    onChange={handleInputChange}
+                    name="identification"
+                    required
+                  />
+                </div>
+                <div className={styles.inps}>
+                  <input
+                    type="password"
+                    placeholder="Contraseña"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    name="password"
+                    required
+                  />
+                </div>
+                <div className={styles.btn}>
+                  <button type="submit">Registrarse</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -40,7 +113,5 @@ const Register = () => {
     </>
   );
 };
-
-
 
 export default Register;
