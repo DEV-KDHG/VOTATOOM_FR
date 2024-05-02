@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import styles from './Register.module.css';
-import axios from 'axios';
-import HeaderLogo from '../../Header/HeaderLogo';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styles from "./Register.module.css";
+import axios from "axios";
+import HeaderLogo from "../../Header/HeaderLogo";
+import Inpunts from "../../shared/inpunts/Inpunts";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const initialState = {
-    username: '',
-    name: '',
-    lastName: '',
-    identification: '',
-    password: ''
+    username: "",
+    name: "",
+    lastName: "",
+    identification: "",
+    password: "",
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -19,25 +20,54 @@ const Register = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    for (const key in formData) {
+      if (formData[key].trim() === "") {
+        await Swal.fire({
+          title: "Error!",
+          text: `El campo '${key}' no puede estar vacío.`,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    }
+
     try {
-      const response = await axios.post('http://localhost:8080/api/v2/register/admin', formData);
+      const response = await axios.post(
+        "http://localhost:8080/api/v2/register/admin",
+        formData
+      );
       if (response.status === 200) {
         const data = response.data;
-        localStorage.setItem('jwtToken', data.token);
-        console.log(data.token)
-        alert('usuario creado')
+        localStorage.setItem("jwtToken", data.token);
+        await Swal.fire({
+          title: "Éxito!",
+          text: "Usuario creado exitosamente.",
+          icon: "success",
+          confirmButtonText: "OK",
+          customClass: {
+            popup: styles.myCustomPopupClass,
+            title: styles.myCustomTitleClass,
+            content: styles.myCustomTextClass,
+            confirmButton: styles.myCustomConfirmButtonClass,
+          },
+        });
+        // Redirigir a la página de inicio de sesión
+        window.location.href = "/login";
       } else {
-        console.error('Registro fallido');
+        console.error("Registro fallido");
       }
     } catch (error) {
-      console.error('Error al procesar la solicitud:', error);
+      console.error("Error al procesar la solicitud:", error);
     }
+  
   };
 
   return (
@@ -53,8 +83,9 @@ const Register = () => {
             </div>
             <div className={styles.formulario}>
               <form onSubmit={handleSubmit}>
+                {}
                 <div className={styles.inps}>
-                  <input
+                  <Inpunts
                     type="text"
                     placeholder="Nombre de usuario"
                     value={formData.username}
@@ -64,7 +95,7 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.inps}>
-                  <input
+                  <Inpunts
                     type="text"
                     placeholder="Nombre"
                     value={formData.name}
@@ -74,7 +105,7 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.inps}>
-                  <input
+                  <Inpunts
                     type="text"
                     placeholder="Apellido"
                     value={formData.lastName}
@@ -84,7 +115,7 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.inps}>
-                  <input
+                  <Inpunts
                     type="text"
                     placeholder="Identificación"
                     value={formData.identification}
@@ -94,7 +125,7 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.inps}>
-                  <input
+                  <Inpunts
                     type="password"
                     placeholder="Contraseña"
                     value={formData.password}
@@ -103,11 +134,12 @@ const Register = () => {
                     required
                   />
                 </div>
+                {}
                 <div className={styles.btn}>
-                  <button type="submit" onClick={()=>{
-                   window.location.href = '/login';
-                  }}>Registrarse</button>
+                  <button type="submit">Registrarse</button>
+                 
                 </div>
+                
               </form>
             </div>
           </div>
