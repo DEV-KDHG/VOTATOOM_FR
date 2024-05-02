@@ -1,0 +1,37 @@
+
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+body {
+  background-color: #d3d3d3; /* Cambia el color de fondo del cuerpo */
+}
+
+.table-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.table-striped thead tr {
+  border: 2px solid black; 
+}
+
+.table-striped tbody td {
+  border: 1px solid black; 
+  padding: 8px;
+}
+
+.title {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  height: 100%; 
+}
+
+.title h1 {
+  text-align: center;
+}
