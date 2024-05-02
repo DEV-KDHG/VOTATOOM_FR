@@ -1,0 +1,68 @@
+
+.container {
+    width: 75%;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.container{
+    margin-top: 3%;
+}
+
+.container-browser {
+    margin-top: 20px; /* Ajusta el margen superior */
+}
+
+/* Opcional: Ajusta la tabla para que no se superponga con la barra de búsqueda */
+.container-tabla-datos {
+    margin-top: 20px; /* Ajusta el margen superior */
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Aplica el margen derecho automático */
+}
+
+.imagen {
+    margin-left: auto; /* Alinea la imagen a la derecha */
+}
+
+.img {
+    width: 85%;
+}
+/* .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 7px;
+} */
+
+
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.paginacion button{
+    margin-left: 10px;
+}
+
+.btnn {
+    border: none;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    color: gray;
+    width: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 10%;
+    background-color: rgb(187, 184, 184);
+    transition:  all 0.3s ease;
+}
+
+.btnn:hover{
+    background-color: #5C6C72;
+    color: white;
+
+}
