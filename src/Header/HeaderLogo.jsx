@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Header.module.css"
-const Header = () => {
+const HeaderLogo= () => {
   return (
     <>
       <div className={style.logo} >
@@ -13,4 +13,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderLogo;
