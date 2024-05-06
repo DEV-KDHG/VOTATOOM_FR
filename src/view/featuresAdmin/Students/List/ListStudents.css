@@ -4,32 +4,44 @@
 
 
 body {
-  background-color: #d3d3d3; /* Cambia el color de fondo del cuerpo */
+  background-color: #d3d3d3;
 }
 
 .table-responsive {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  width: 70vw;
+  height: 70vh;
+  width: 60vw;
   margin: 0 auto;
 }
 
+.table-striped {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .table-striped thead tr {
-  border: 2px solid black; 
+  position: sticky;
+  top: 0;
+  background-color: #59735F;
+  border: 2px solid black;
+}
+
+.table-striped th {
+  padding: 8px;
 }
 
 .table-striped tbody td {
-  border: 1px solid black; 
+  border: 1px solid black;
   padding: 8px;
 }
 
 .title {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  align-items: center; 
-  height: 100%; 
+  align-items: center;
+  height: 100%;
 }
 
 .title h1 {
