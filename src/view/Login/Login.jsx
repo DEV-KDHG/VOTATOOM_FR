@@ -37,7 +37,7 @@ const Login = () => {
         console.log(data.token);
         setIsLoggedIn(true);
         setTimeout(() => {
-          window.location.href = '/listStudents'; // Redirección después de 100 milisegundos
+          window.location.href = '/addStudents'; // Redirección después de 100 milisegundos
         }, 100);
       } else {
         setError("Inicio de sesión fallido");

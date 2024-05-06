@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import useAuthToken from "../../../auth/useAuthToken";
-import "./ListStudents.css"
+
+import useAuthToken from "../../auth/useAuthToken";
 
 const ListStudents = () => {
   const [students, setStudents] = useState([]);
@@ -16,7 +16,7 @@ const ListStudents = () => {
         const token = localStorage.getItem("jwtToken");
 
         const response = await axios.get(
-          "http://localhost:8080/api/v1/students1/findAll",
+          "http://localhost:8080/api/v1/students1/students/findByGrade/{grade}",
           {
             headers: {
               Authorization: `Bearer ${token}`,
