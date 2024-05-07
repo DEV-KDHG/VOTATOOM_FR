@@ -29,8 +29,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/OptionalStudents" element={<  OptionalStudents/>} /> 
         <Route path="/OptionalVeedor" element={<  OptionalVeedor/>} /> 
         <Route path="/listStudents" element={<ListStudents />} /> 
-        <Route path='/BuscarEstudiantesRepresentates' element={<BuscarEstuRepresentates />}></Route>
-        <Route path='/representatesRegistrados' element={<RepresentativeStored />}></Route>
+        <Route path='/BuscarEstuRepresentates' element={<BuscarEstuRepresentates />}></Route>
+        <Route path='/representativeStored' element={<RepresentativeStored />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
