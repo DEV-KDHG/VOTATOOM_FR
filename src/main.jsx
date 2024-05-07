@@ -6,7 +6,7 @@ import Register from './view/Register/RegisterAdmin';
 import Personero from './view/person/Personero';
 
 import AddStudent from './view/featuresAdmin/Students/ADD/AddStudents'
-import ListStudents from './view/featuresAdmin/Students/List/ListStudents';
+// import ListStudents from './view/featuresAdmin/Students/List/ListStudents';
 import BuscarEstuRepresentates from './components/BuscarEstuRepresentates';
 import RepresentativeStored from './components/RepresentativeStored';
 import BuscarEstuComptrollers from './components/BuscarEstuComptrollers';
