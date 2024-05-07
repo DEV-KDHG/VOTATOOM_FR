@@ -82,9 +82,10 @@ const Login = () => {
                   />
                 </div>
                 <div className={styles.btn}>
-                  
-                    <Buto name={"iniciar sesión"} type="submit" />
-                  
+                  <Buto name={"iniciar sesión"} type="submit" />
+                  <Link to="/Register">
+                    <Buto name={"Registrarse"} />
+                  </Link>
                 </div>
               </form>
             </div>
