@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/BuscarEstuRepresentates.css';
 import { Link } from 'react-router-dom';
-import RepresentativeService from '../services/RepresentativeService';
+import '../styles/BuscarEstuRepresentates.css';
 import Swal from 'sweetalert2';
+import PersonService from '../services/PersonService'
 import StudentService from '../services/StudentService';
 
-export const BuscarEstuRepresentates = () => {
+export const BuscarPerson = () => {
 
     // Establecer el token JWT en el almacenamiento local
-    localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNTI1NDgsImV4cCI6MTcxNTEzODk0OH0.EMdBILEuLIlRCP8IFDE7cA7eksLxyXqdpGPBUPH9SA9_M3D7Oaqw7FdcfZGDLWSd');
+    localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNjAyMjUsImV4cCI6MTcxNTE0NjYyNX0.llSQ0f0DjLPW-Kb8RqaQzd5-C-bKBjyPP4_FRuaNdU4H4AgOg1Axyxc1I91fr9rx');
 
     // Estado para almacenar los datos de los estudiantes
     const [datos, setDatos] = useState([]);
@@ -24,14 +24,14 @@ export const BuscarEstuRepresentates = () => {
 
     // Efecto para cargar los datos de los estudiantes al inicializar el componente o al cambiar la página
     useEffect(() => {
-        obtenerEstudiantes();
+        obtenerEstudiantesDeSolo11();
     }, [paginaActual]); // Agrega paginaActual como dependencia para que se vuelva a obtener al cambiar la página
 
 
     // Función para obtener los datos de los estudiantes
-    const obtenerEstudiantes = async () => {
+    const obtenerEstudiantesDeSolo11 = async () => {
         try {
-            const response = await StudentService.getAllEstudiantes();
+            const response = await StudentService.getEstudiantesSoloDe11();
             setDatos(response.data);
         } catch (error) {
             console.error('Error al obtener estudiantes:', error);
@@ -50,7 +50,7 @@ export const BuscarEstuRepresentates = () => {
         }
     };
 
-    
+
     // Calcula el índice inicial de los datos a mostrar en la página actual
     const indiceInicial = (paginaActual - 1) * registrosPorPagina;
 
@@ -68,23 +68,23 @@ export const BuscarEstuRepresentates = () => {
 
 
     // Función para registrar un representante
-    const registrarRepresentante = async (identification) => {
+    const registrarPerson = async (identification) => {
         try {
-            await RepresentativeService.SaveRepresentante(identification);
+            await PersonService.SavePerson(identification);
             // Muestra un mensaje de éxito utilizando SweetAlert2
             Swal.fire({
                 icon: 'success',
                 title: '¡Éxito!',
-                text: 'Representante registrado con éxito.',
+                text: 'Personero registrado con éxito.',
                 timer: 1800,
             });
             // Actualiza la lista de estudiantes después de registrar uno nuevo
-            obtenerEstudiantes();
+            obtenerEstudiantesDeSolo11();
         } catch (error) {
             // Muestra un mensaje de error utilizando SweetAlert2
             Swal.fire({
                 icon: 'error',
-                title: 'Ocurrió un error al registrar el representante.',
+                title: 'Ocurrió un error al registrar el Personero.',
                 text: `Mensaje de error: ${error}`,
                 timer: 1800,
             });
@@ -96,9 +96,9 @@ export const BuscarEstuRepresentates = () => {
         <div className="container">
             {/* Encabezado del componente */}
             <div className='titulo'>
-                <h2>Buscar Estudiante Representante al Consejo</h2>
+                <h2>Buscar Estudiante Representante a la Personeria</h2>
                 {/* <a className='imagen' href="#"><img className='img' src="src\assets\eye.svg" alt="Representantes" /></a> */}
-                <Link to='/representatesRegistrados' className='imagen'>
+                <Link to='/PersonerosRegistrados' className='imagen'>
                     <img className='img' src="src\assets\eye.svg" alt="Representantes" />
                 </Link>
 
@@ -145,7 +145,7 @@ export const BuscarEstuRepresentates = () => {
                                 <td>{dato.identification}</td>
                                 <td>{dato.grade}</td>
                                 {/* Botón para registrar el representante */}
-                                <td><button type="button" className="btn btn-success btn-sm" onClick={() => registrarRepresentante(dato.identification)}>Registrar</button></td>
+                                <td><button type="button" className="btn btn-success btn-sm" onClick={() => registrarPerson(dato.identification)}>Registrar</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -158,6 +158,7 @@ export const BuscarEstuRepresentates = () => {
             </div>
         </div>
     );
-};
 
-export default BuscarEstuRepresentates;
+}
+
+export default BuscarPerson;
