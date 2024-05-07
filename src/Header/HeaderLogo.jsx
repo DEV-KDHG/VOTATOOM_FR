@@ -1,13 +1,16 @@
-import React from 'react'
-
-const Header = () => {
+import React from 'react';
+import style from "./Header.module.css"
+const HeaderLogo= () => {
   return (
     <>
-       <div className="logo">
-          <img src="src\Header\universidad-de-cartagena-colombia-colores-planos-logo-29D4150EAF-seeklogo.com (1).png" alt="aun no hayfoto" />
-        </div>
+      <div className={style.logo} >
+        <img
+          src="src/Header/universidad-de-cartagena-colombia-colores-planos-logo-29D4150EAF-seeklogo.com (1).png"
+          alt="aun no hayfoto"
+        />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default HeaderLogo;

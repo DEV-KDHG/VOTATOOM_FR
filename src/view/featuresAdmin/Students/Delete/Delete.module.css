@@ -1,0 +1,50 @@
+body, .page, .containerForms {
+    background-color: #d3d3d3;
+  }
+  
+  .container {
+    height: 10vh;
+    margin: 0 auto;
+  }
+  
+  .title {
+    justify-content: center;
+  }
+  
+  .containerForms {
+    padding: 1rem;
+    border: 2rem;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .inps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .inps input {
+    background-color: #d3d3d3;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .btn button {
+    background-color: #59735f;
+    font-family: "Times New Roman", Times, serif;
+    padding: 0.5rem;
+    border: none;
+    margin-top: 2em;
+    border-radius: 2rem;
+    color: white; /* Añade color de texto */
+  }
+  

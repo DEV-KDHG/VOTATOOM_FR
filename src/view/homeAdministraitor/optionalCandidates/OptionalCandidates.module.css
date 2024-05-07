@@ -1,0 +1,33 @@
+body
+{
+    margin-top: 3vw;
+}
+.title
+{
+ font-size: 2vw;
+    text-align: center;
+    font-weight: 200;
+    margin: 0 0  0;
+   
+ 
+}
+ 
+.container_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Aumentar el ancho mínimo de las tarjetas */
+    gap: 20px; /* Espacio entre las filas y las columnas */
+    padding: 20px; /* Agregar relleno al contenedor */
+    justify-content: center; /* Centrar las tarjetas horizontalmente */
+    align-items: center; /* Centrar las tarjetas verticalmente */
+    margin-left: 6vw;
+    
+}
+
+
+ .acctions
+ {
+ 
+   
+    border-radius: 2rem;
+   
+ }

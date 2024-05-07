@@ -1,0 +1,19 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+ align-items: center;
+    height: 100vh;
+    
+}
+.inf
+{
+    background-color: yellow;
+    padding: 3rem;
+    border: solid;
+    border-radius: 0.4rem;
+}
+.title h1{
+    text-align: center;
+padding:  0 0 4rem 0;
+}

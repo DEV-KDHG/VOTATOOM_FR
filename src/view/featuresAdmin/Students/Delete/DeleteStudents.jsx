@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAuthToken from "../../../../auth/useAuthToken";
+import Inpunts from "../../../../shared/inpunts/Inpunts";
+import { Button } from "bootstrap";
+import Buto from "../../../../shared/buttons/Buto";
+import ListStudents from "../List/ListStudents";
+import HeaderLogo from '../../../../Header/HeaderLogo';
+import styles from './Delete.module.css';
 
 const DeleteStudent = () => {
+  const { authToken } = useAuthToken(); // Obtiene el token de autenticación del hook useAuthToken
   const [identification, setIdentification] = useState("");
 
   const handleInputChange = (e) => {
@@ -21,7 +29,12 @@ const DeleteStudent = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/v1/students/${identification}`
+        `http://localhost:8080/api/v1/students/deleteByIdentification/${identification}`,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}` // Incluye el token de autenticación en los headers
+          }
+        }
       );
 
       console.log("Estudiante eliminado exitosamente:", response.data);
@@ -45,16 +58,33 @@ const DeleteStudent = () => {
   };
 
   return (
-    <div>
-      <h2>Eliminar Estudiante por Identificación</h2>
-      <input
+    <><div className="styles.page">
+     <div className={styles.container}>
+    <div className={styles.logo}>
+          <HeaderLogo/>
+        </div >
+        <div className={styles.title}> <h2>Eliminar Estudiante por Identificación</h2></div>
+        <div className={styles.containerForms}>
+         
+      <Inpunts
         type="text"
         placeholder="Identificación del estudiante"
         value={identification}
         onChange={handleInputChange}
       />
-      <button onClick={handleDelete}>Eliminar Estudiante</button>
-    </div>
+      <Buto onClick={handleDelete}name="Eliminar Estudiante"></Buto>
+      <div className={styles.ListStudents}>
+
+<ListStudents/>
+</div>
+      </div>
+      <div>
+     
+      </div>
+      </div> 
+      </div>
+    </>
+    
   );
 };
 
