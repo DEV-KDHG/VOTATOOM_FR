@@ -22,6 +22,7 @@ import OptionalStudents from "./view/homeAdministraitor/optionalStudents/Optiona
 import OptionalVeedor from "./view/homeAdministraitor/optionalVeedor/OptionalVeedor";
 import HomeAdministraitor from "./view/homeAdministraitor/HomeAdministraitor";
 import SharedStudents from "./view/featuresAdmin/Shared/SharedStudents";
+import PanelCargaAspirantes from "./components/PanelCargaAspirantes";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path='/ContraloresRegistrados' element={<ComptrollerStored />}></Route>
         <Route path='/BuscarEstudiantesPersoneria' element={<BuscarEstuPerson/>} ></Route>
         <Route path='/PersonerosRegistrados' element={<PersonStored />} ></Route>
+        <Route path='/PanelCargaAspirantes' element={<PanelCargaAspirantes />} ></Route>
 
 
       </Routes>

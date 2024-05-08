@@ -8,7 +8,7 @@ import StudentService from '../services/StudentService';
 export const BuscarEstuRepresentates = () => {
 
     // Establecer el token JWT en el almacenamiento local
-    localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNTI1NDgsImV4cCI6MTcxNTEzODk0OH0.EMdBILEuLIlRCP8IFDE7cA7eksLxyXqdpGPBUPH9SA9_M3D7Oaqw7FdcfZGDLWSd');
+    localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUxNDM1NzEsImV4cCI6MTcxNTIyOTk3MX0.O607IdcGB2oBKY52mzoMyGxun8347aXOFt-tXhpmG8XiLr0hPzvrwdjmlNbF8sOm');
 
     // Estado para almacenar los datos de los estudiantes
     const [datos, setDatos] = useState([]);
