@@ -22,6 +22,7 @@ import OptionalStudents from "./view/homeAdministraitor/optionalStudents/Optiona
 import OptionalVeedor from "./view/homeAdministraitor/optionalVeedor/OptionalVeedor";
 import HomeAdministraitor from "./view/homeAdministraitor/HomeAdministraitor";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
