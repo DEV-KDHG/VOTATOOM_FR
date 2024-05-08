@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 import axios from "axios";
+import Swal from "sweetalert2"; // Importa SweetAlerts
+
 import Jtexfield from "../../shared/labels/Jtexfield";
 import Inpunts from "../../shared/inpunts/Inpunts";
 import Buto from "../../shared/buttons/Buto";
@@ -12,9 +14,6 @@ const Login = () => {
     username: "",
     password: "",
   });
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,15 +34,31 @@ const Login = () => {
         const data = response.data;
         localStorage.setItem("jwtToken", data.token);
         console.log(data.token);
-        setIsLoggedIn(true);
-        setTimeout(() => {
-          window.location.href = '/addStudents'; // Redirección después de 100 milisegundos
-        }, 100);
+        // Mostrar alerta de éxito
+        Swal.fire({
+          icon: "success",
+          title: "Inicio de sesión exitoso",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          // Redirección después de la alerta
+          window.location.href = '/Home';
+        });
       } else {
-        setError("Inicio de sesión fallido");
+        // Mostrar alerta de error
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Inicio de sesión fallido",
+        });
       }
     } catch (error) {
-      setError("Error al procesar la solicitud: " + error.message);
+    
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Error al procesar la solicitud, por favor vuelva a intentarlo " ,
+      });
     }
   };
 
@@ -92,8 +107,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-  
-      {error && <p>{error}</p>}
     </>
   );
 };

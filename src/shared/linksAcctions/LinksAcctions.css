@@ -1,0 +1,19 @@
+
+.links-actions-container {
+    display: flex;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+
+  .links-actions-icon {
+    margin-right: 10px; 
+  }
+  
+
+  .links-actions-link {
+    color: black;           /* Color negro */
+    text-decoration: none;  /* Sin subrayado */
+    font-size: 18px;        /* Tamaño de fuente un poco más grande */
+  }
+  

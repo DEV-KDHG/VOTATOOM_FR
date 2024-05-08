@@ -59,15 +59,29 @@ const Register = () => {
             confirmButton: styles.myCustomConfirmButtonClass,
           },
         });
-        // Redirigir a la página de inicio de sesión
-        window.location.href = "/login";
+
+        // Redirigir a la página principal usando history.push
+        window.location.href ="/";
       } else {
-        console.error("Registro fallido");
+        throw new Error("Error en la solicitud");
       }
     } catch (error) {
-      console.error("Error al procesar la solicitud:", error);
+      let errorMessage = "Error al procesar la solicitud";
+      if (axios.isAxiosError(error)) {
+        if (error.response && error.response.status === 404) {
+          errorMessage = "No se encontró el servidor";
+        } else if (error.response && error.response.data && error.response.data.message) {
+          errorMessage = error.response.data.message;
+        }
+      }
+
+      await Swal.fire({
+        title: "Error!",
+        text: errorMessage,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
-  
   };
 
   return (
@@ -83,7 +97,6 @@ const Register = () => {
             </div>
             <div className={styles.formulario}>
               <form onSubmit={handleSubmit}>
-                {}
                 <div className={styles.inps}>
                   <Inpunts
                     type="text"
@@ -134,13 +147,9 @@ const Register = () => {
                     required
                   />
                 </div>
-                {}
                 <div className={styles.btn}>
                   <button type="submit">Registrarse</button>
-                 
                 </div>
-    
-                
               </form>
             </div>
           </div>

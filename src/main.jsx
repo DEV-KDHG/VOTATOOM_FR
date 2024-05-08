@@ -13,6 +13,7 @@ import OptionalCandidates from "./view/homeAdministraitor/optionalCandidates/Opt
 import OptionalStudents from "./view/homeAdministraitor/optionalStudents/OptionalStudents";
 import OptionalVeedor from "./view/homeAdministraitor/optionalVeedor/OptionalVeedor";
 import HomeAdministraitor from "./view/homeAdministraitor/HomeAdministraitor";
+import SharedStudents from "./view/featuresAdmin/Shared/SharedStudents";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -23,13 +24,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Register" element={<Register/>} />
         <Route path="/personero" element={<Personero />} />
         <Route path="/Home" element={<HomeAdministraitor/>} /> 
-        <Route path="/Eliminar" element={< DeleteStudent/>} /> 
+        <Route path="/Delete" element={< DeleteStudent/>} /> 
         <Route path="/OptionalCandidates" element={<  OptionalCandidates/>} /> 
         <Route path="/OptionalStudents" element={<  OptionalStudents/>} /> 
         <Route path="/OptionalVeedor" element={<  OptionalVeedor/>} /> 
         <Route path="/addStudents" element={<AddStudent />} /> 
         <Route path="/listStudents" element={<ListStudents />} /> 
         <Route path="/listStudentsGrade" element={<ListStudentsgrade />} /> 
+        <Route path="/sharedStudents" element={<SharedStudents />} /> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
