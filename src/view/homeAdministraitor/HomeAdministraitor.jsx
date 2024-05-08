@@ -10,7 +10,7 @@ const HomeAdministraitor = () => {
        <div className={style.title}>
           <h1> Home Administrador</h1>
           <div className={style.container_cards}>
-            <CardFunctions  img={"https://cdn.icon-icons.com/icons2/936/PNG/512/user-shape_icon-icons.com_73346.png"}  to={"/student"} name={"Estudiantes"} />
+            <CardFunctions  img={"https://cdn.icon-icons.com/icons2/936/PNG/512/user-shape_icon-icons.com_73346.png"}  to={"/OptionalStudents"} name={"Estudiantes"} />
                       <CardFunctions img="src\images\Aspirante.png" to={"/login"} name={"Aspirante"} />
                       <CardFunctions img="src\images\Veedoress_1___1___1_-removebg-preview.png" to={"/login"} name={"Veedores"}/>
                       <CardFunctions img="src\view\homeAdministraitor\conteoDeVotos-removebg-preview.png" to={"/login"} name={"Conteo de votos"}/>

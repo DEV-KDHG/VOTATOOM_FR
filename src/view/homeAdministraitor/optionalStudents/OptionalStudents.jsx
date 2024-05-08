@@ -16,7 +16,7 @@ const OptionalStudents = () => {
             </div>
             <div className={style.options}>
               <div className={style.optionItem}>
-                <LinksAcctions title={"Cargar un estudiante"} to={"/testing"} />
+                <LinksAcctions title={"Cargar un estudiante"} to="/addStudents" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -34,7 +34,7 @@ const OptionalStudents = () => {
               <div className={style.optionItem}>
                 <LinksAcctions
                   title={"Eliminar  un estudiante"}
-                  to={"/testing"}
+                  to={"/Delete"}
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const OptionalStudents = () => {
                 </svg>
               </div>
               <div className={style.optionItem}>
-                <LinksAcctions title={"Buscar un estudiante"} to={"/testing"} />
+                <LinksAcctions title={"Buscar un estudiante"} to={"/sharedStudents"} />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -60,22 +60,7 @@ const OptionalStudents = () => {
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
               </div>
-              <div className={style.optionItem}>
-                <LinksAcctions
-                  title={"Listado de estudiante"}
-                  to={"/testing"}
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  fill="currentColor"
-                  class="bi bi-person-lines-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z" />
-                </svg>
-              </div>
+              
             </div>
           </div>
         </div>
