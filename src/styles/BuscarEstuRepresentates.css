@@ -1,0 +1,42 @@
+
+.container {
+    width: 75%;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.container{
+    margin-top: 3%;
+}
+
+.container-browser {
+    margin-top: 20px; /* Ajusta el margen superior */
+}
+
+/* Opcional: Ajusta la tabla para que no se superponga con la barra de búsqueda */
+.container-tabla-datos {
+    margin-top: 20px; /* Ajusta el margen superior */
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Aplica el margen derecho automático */
+}
+
+.imagen {
+    margin-left: auto; /* Alinea la imagen a la derecha */
+}
+
+.img {
+    width: 85%;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.paginacion button{
+    margin-left: 10px;
+}
