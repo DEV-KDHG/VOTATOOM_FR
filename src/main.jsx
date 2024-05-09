@@ -1,56 +1,57 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./view/Login/Login";
-import Register from "./view/Register/RegisterAdmin";
-import Personero from "./view/person/Personero";
 
-import AddStudent from "./view/featuresAdmin/Students/ADD/AddStudents";
-// import ListStudents from './view/featuresAdmin/Students/List/ListStudents';
-import BuscarEstuRepresentates from "./components/BuscarEstuRepresentates";
-import RepresentativeStored from "./components/RepresentativeStored";
-import BuscarEstuComptrollers from "./components/BuscarEstuComptrollers";
-import ComptrollerStored from "./components/ComptrollerStored";
-import { PersonStored } from "./components/PersonStored";
-import BuscarEstuPerson from "./components/BuscarEstuPerson";
 
-import ListStudentsgrade from "./view/featuresJury/ListStudentsGrade";
-import ListStudents from "./view/featuresJury/ListStudentsGrade";
-import DeleteStudent from "./view/featuresAdmin/Students/Delete/DeleteStudents";
-import OptionalCandidates from "./view/homeAdministraitor/optionalCandidates/OptionalCandidates";
-import OptionalStudents from "./view/homeAdministraitor/optionalStudents/OptionalStudents";
-import OptionalVeedor from "./view/homeAdministraitor/optionalVeedor/OptionalVeedor";
-import HomeAdministraitor from "./view/homeAdministraitor/HomeAdministraitor";
-import SharedStudents from "./view/featuresAdmin/Shared/SharedStudents";
 
+import Login from "./view/LoginAndRegister/Login/Login";
+import Register from "./view/LoginAndRegister/Register/RegisterAdmin";
+import Personero from "./view/TARJETAS/Personero";
+import HomeAdministraitor from "./view/ADMIN/HOME/HomeAdministraitor";
+import DeleteStudent from "./view/ADMIN/Students/Delete/DeleteStudents";
+
+import OptionalStudents from "./view/ADMIN/HOME/optionalStudents/OptionalStudents";
+import OptionalVeedor from "./view/ADMIN/HOME/optionalVeedor/OptionalVeedor";
+import ListStudents from "./view/ADMIN/Students/List/ListStudents";
+import ListStudentsGrade from "./view/JURY/ListStudentsGrade";
+import SearchStudents from "./view/ADMIN/Students/SearchStudents/SearchStudents";
+import BuscarEstuRepresentates from "./view/ADMIN/candidates/Representantes/BuscarEstuRepresentates";
+import RepresentativeStored from "./view/ADMIN/candidates/Representantes/RepresentativeStored";
+import BuscarEstuComptrollers from "./view/ADMIN/candidates/Contralor/BuscarEstuComptrollers";
+import ComptrollerStored from "./view/ADMIN/candidates/Contralor/ComptrollerStored";
+import { PersonStored } from "./view/ADMIN/candidates/Personero/PersonStored";
+import BuscarPerson from "./view/ADMIN/candidates/Personero/BuscarEstuPerson";
+import AddStudents from "./view/ADMIN/Students/ADD/AddStudent"
+import PanelCargaAspirantes from "./view/ADMIN/candidates/panel/PanelCargaAspirantes";
+import AddJurado from "./view/ADMIN/JuryAd/AddJurado";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login/>} />
         <Route path="/Register" element={<Register />} />
         <Route path="/personero" element={<Personero />} />
-        <Route path="/addStudents" element={<AddStudent />} />
+        <Route path="/AddStudents" element={<AddStudents/>} />
         <Route path="/Home" element={<HomeAdministraitor />} />
         <Route path="/Delete" element={<DeleteStudent />} />
-        <Route path="/OptionalCandidates" element={<OptionalCandidates />} />
+        <Route path="/AddJury" element={<AddJurado/>} />
         <Route path="/OptionalStudents" element={<OptionalStudents />} />
-        <Route path="/OptionalController" element={<OptionalController />} />
-        <Route path="/OptionalVeedor" element={<OptionalVeedor />} />
-        <Route path="/OptionalPersonero" element={<OptionalPersonero />} />
+
+        <Route path="/OptionalVeedor" element={<OptionalVeedor/>} />
+
         <Route path="/listStudents" element={<ListStudents />} />
 
-        <Route path="/listStudentsGrade" element={<ListStudentsgrade />} /> 
-        <Route path="/sharedStudents" element={<SharedStudents />} /> 
+        <Route path="/listStudentsGrade" element={<ListStudentsGrade/>} /> 
+        <Route path="/searchStudents" element={<SearchStudents />} /> 
 
         <Route path='/BuscarEstudiantesRepresentates' element={<BuscarEstuRepresentates />}></Route>
         <Route path='/representatesRegistrados' element={<RepresentativeStored />}></Route>
         <Route path='/BuscarEstudiantesContralores' element={<BuscarEstuComptrollers />}></Route>
-        <Route path='/ContraloresRegistrados' element={<ComptrollerStored />}></Route>
-        <Route path='/BuscarEstudiantesPersoneria' element={<BuscarEstuPerson/>} ></Route>
-        <Route path='/PersonerosRegistrados' element={<PersonStored />} ></Route>
-
-
+        <Route path='/ContraloresRegistrados' element={<ComptrollerStored/>}></Route>
+        <Route path='/BuscarEstudiantesPersoneria' element={<BuscarPerson/>} ></Route>
+        <Route path='/PersonerosRegistrados' element={<PersonStored/>} ></Route>
+        <Route path='/PanelCargaAspirantes' element={<PanelCargaAspirantes/>} ></Route>
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
