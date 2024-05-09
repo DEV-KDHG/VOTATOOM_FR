@@ -22,9 +22,6 @@ import OptionalStudents from "./view/homeAdministraitor/optionalStudents/Optiona
 import OptionalVeedor from "./view/homeAdministraitor/optionalVeedor/OptionalVeedor";
 import HomeAdministraitor from "./view/homeAdministraitor/HomeAdministraitor";
 import SharedStudents from "./view/featuresAdmin/Shared/SharedStudents";
-import OptionalRepresentante from "./view/homeAdministraitor/optionalCandidates/OptionalRepresentante/OptionalRepresentante";
-import OptionalController from "./view/homeAdministraitor/optionalCandidates/OptionalController/OptionalController";
-import OptionalPersonero from "./view/homeAdministraitor/optionalCandidates/OptionalPersonero/OptionalPersonero";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -43,34 +40,17 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/OptionalPersonero" element={<OptionalPersonero />} />
         <Route path="/listStudents" element={<ListStudents />} />
 
-        <Route path="/listStudentsGrade" element={<ListStudentsgrade />} />
-        <Route path="/sharedStudents" element={<SharedStudents />} />
-        <Route
-          path="/OptionalRepresentante"
-          element={<OptionalRepresentante />}
-        />
+        <Route path="/listStudentsGrade" element={<ListStudentsgrade />} /> 
+        <Route path="/sharedStudents" element={<SharedStudents />} /> 
 
-        <Route
-          path="/BuscarEstudiantesRepresentates"
-          element={<BuscarEstuRepresentates />}
-        ></Route>
-        <Route
-          path="/representatesRegistrados"
-          element={<RepresentativeStored />}
-        ></Route>
-        <Route
-          path="/BuscarEstudiantesContralores"
-          element={<BuscarEstuComptrollers />}
-        ></Route>
-        <Route
-          path="/ContraloresRegistrados"
-          element={<ComptrollerStored />}
-        ></Route>
-        <Route
-          path="/BuscarEstudiantesPersoneria"
-          element={<BuscarEstuPerson />}
-        ></Route>
-        <Route path="/PersonerosRegistrados" element={<PersonStored />}></Route>
+        <Route path='/BuscarEstudiantesRepresentates' element={<BuscarEstuRepresentates />}></Route>
+        <Route path='/representatesRegistrados' element={<RepresentativeStored />}></Route>
+        <Route path='/BuscarEstudiantesContralores' element={<BuscarEstuComptrollers />}></Route>
+        <Route path='/ContraloresRegistrados' element={<ComptrollerStored />}></Route>
+        <Route path='/BuscarEstudiantesPersoneria' element={<BuscarEstuPerson/>} ></Route>
+        <Route path='/PersonerosRegistrados' element={<PersonStored />} ></Route>
+
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

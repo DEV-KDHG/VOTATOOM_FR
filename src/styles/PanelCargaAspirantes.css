@@ -1,0 +1,63 @@
+.panel-carga-aspirantes {
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo-con-imagen {
+    display: flex; /* Utilizamos flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+  
+  .titulo-con-imagen h1 {
+    margin-right: 10px; /* Ajusta el margen a la derecha del título */
+  }
+  
+  .titulo-con-imagen svg {
+    width: 40px; /* Ajusta el tamaño de la imagen SVG */
+  }
+  
+  .opciones {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .opciones li {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  nav h1 {
+    text-align: center;
+    margin-top: 5%;
+    padding-bottom: 4%;
+    padding-left: 10%;
+    padding-right: 5%;
+    font-weight: 900;
+    font-size: 35px;
+  }
+  
+  .opciones button {
+    background-color: rgb(172, 164, 164);
+    color: #fff;
+    font-weight: 900;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 75%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .opciones button:hover {
+    background-color: #2f693d;
+    transform: scale(1.1);
+    font-size: 25px;
+  }
+  
