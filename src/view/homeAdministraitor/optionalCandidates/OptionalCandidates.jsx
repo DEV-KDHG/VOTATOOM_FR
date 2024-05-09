@@ -16,17 +16,17 @@ const OptionalCandidates = () => {
       <div className={style.container_cards}>
         <CardFunctions
           img={person}
-          to={"/optionsOfStudents"}
+          to={"/OptionalPersonero"}
           name={"Personero"}
         />
         <CardFunctions
           img={person}
-          to={"/optionsOCandidates"}
+          to={"/OptionalRepresentante"}
           name={"Representante"}
         />
         <CardFunctions
           img={person}
-          to={"/optionsOfVeedor"}
+          to={"/OptionalController"}
           name={"Contralor"}
         />
       </div>
