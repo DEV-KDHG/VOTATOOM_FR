@@ -24,7 +24,8 @@ import BuscarPerson from "./view/ADMIN/candidates/Personero/BuscarEstuPerson";
 import AddStudents from "./view/ADMIN/Students/ADD/AddStudent"
 import PanelCargaAspirantes from "./view/ADMIN/candidates/panel/PanelCargaAspirantes";
 import AddJurado from "./view/ADMIN/JuryAd/AddJurado";
-import HeaderAdmin from "./HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "./Headers/HeaderAdmin";
+import HeaderLoguin from "./Headers/HeaderLoguin";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -54,6 +55,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path='/PanelCargaAspirantes' element={<PanelCargaAspirantes/>} ></Route>
         
         <Route path='/HeaderAdmi' element={<HeaderAdmin/>} ></Route>
+
+        <Route path='/HeaderLogin' element={<HeaderLoguin/>}></Route>
         
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import React from "react"
-import "../HeaderAdmin/HeaderAdmin.css"
+import "../Headers/HeaderAdmin.css"
 import { Link } from "react-router-dom";
 
 export const HeaderAdmin = () => {
