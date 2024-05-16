@@ -21,7 +21,7 @@ export const HeaderAdmin = () => {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item titulo"   >
-                                <Link to='/Home'>
+                                <Link to='/'>
                                 <img className="imgHome" src="src\assets\Home.svg" alt="inicio" />
                                 </Link>
                             </li>

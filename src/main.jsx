@@ -37,9 +37,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/LoginAdmin" element={<Login/>} />
         <Route path="/LoginJury" element={<LoginJury/>} />
-        <Route path="/LoginStudents" element={<LoginStudents/>} />
+        <Route path="/" element={<LoginStudents/>} />
         <Route path="/Register" element={<Register />} />
         <Route path="/n" element={<Personero />} />
         <Route path="/AddStudents" element={<AddStudents/>} />

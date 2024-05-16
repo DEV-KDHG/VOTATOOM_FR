@@ -18,9 +18,9 @@ export const HeaderLoguin = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
           <NavDropdown title="Loguin" id="basic-nav-dropdown" align="end">
-            <NavDropdown.Item href="#action1">Estudiante</NavDropdown.Item>
-            <NavDropdown.Item href="#action2">Administrador</NavDropdown.Item>
-            <NavDropdown.Item href="#action3">Veedor</NavDropdown.Item>
+            <NavDropdown.Item href="/">Estudiante</NavDropdown.Item>
+            <NavDropdown.Item href="/LoginAdmin">Administrador</NavDropdown.Item>
+            <NavDropdown.Item href="/LoginJury">Veedor</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

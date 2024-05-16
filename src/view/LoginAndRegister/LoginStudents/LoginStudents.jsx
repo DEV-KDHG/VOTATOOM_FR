@@ -7,6 +7,7 @@ import Inpunts from "../../../shared/inpunts/Inpunts";
 import Jtexfield from "../../../shared/labels/Jtexfield";
 import Buto from "../../../shared/buttons/Buto";
 import HeaderLogo from '../../../Header/HeaderLogo';
+import HeaderLoguin from "../../../Headers/HeaderLoguin";
 
 const LoginStudents = () => {
   const [formData, setFormData] = useState({
@@ -67,7 +68,7 @@ const LoginStudents = () => {
   return (
     <div className={styles.page}>
       <div className="logo">
-        <HeaderLogo />
+        <HeaderLoguin />
       </div>
       <div className={styles.container}>
         <div className={styles.containerForms}>
