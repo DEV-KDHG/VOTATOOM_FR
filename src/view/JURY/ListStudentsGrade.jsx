@@ -16,7 +16,7 @@ const ListStudentsGrade = () => {
         const token = localStorage.getItem("jwtToken");
 
         const response = await axios.get(
-          "http://localhost:8080/api/v1/students1/students/findByGrade/{grade}",
+          "http://localhost:8080/api/v1/students1/students1/findAll",
           {
             headers: {
               Authorization: `Bearer ${token}`,

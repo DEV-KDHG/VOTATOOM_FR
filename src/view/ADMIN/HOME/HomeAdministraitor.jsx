@@ -1,7 +1,7 @@
 
 import HeaderLogo from "../../../Header/HeaderLogo";
 import CardFunctions from "../../../shared/cardFunctions/CardFunctions";
-
+import { Link } from 'react-router-dom'; 
 import style from "../HOME/HomeAdministraitor.module.css"
 
 const HomeAdministraitor = () => {
@@ -9,6 +9,7 @@ const HomeAdministraitor = () => {
     <>
       <div className={style.container}>
       <HeaderLogo/>
+    
        <div className={style.title}>
           <h1> Home Administrador</h1>
           <div className={style.container_cards}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../Login/Login.module.css";
+import styles from "../LoginJury/LoginJury.module.css";
 import axios from "axios";
 import Swal from "sweetalert2"; // Importa SweetAlerts
 import Inpunts from "../../../shared/inpunts/Inpunts";
@@ -8,7 +8,7 @@ import Jtexfield from "../../../shared/labels/Jtexfield";
 import Buto from "../../../shared/buttons/Buto";
 import HeaderLogo from '../../../Header/HeaderLogo';
 
-const Login = () => {
+const LoginJury = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v2/login/admin",
+        "http://localhost:8080/api/v2/login/jury",
         formData
       );
       if (response.status === 200) {
@@ -41,7 +41,7 @@ const Login = () => {
           timer: 1500,
         }).then(() => {
           // Redirección después de la alerta
-          window.location.href = '/Home';
+          window.location.href = '/listStudentsGrade';
         });
       } else {
         // Mostrar alerta de error
@@ -70,7 +70,7 @@ const Login = () => {
         <div className={styles.container}>
           <div className={styles.containerForms}>
             <div className={styles.title}>
-              <h1> Iniciar sesión </h1>
+              <h1> Iniciar sesión Veedor </h1>
             </div>
 
             <div className={styles.formulario}>
@@ -97,9 +97,7 @@ const Login = () => {
                 </div>
                 <div className={styles.btn}>
                   <Buto name={"iniciar sesión"} type="submit" />
-                  <Link to="/Register">
-                    <Buto name={"Registrarse"} />
-                  </Link>
+                  
                 </div>
               </form>
             </div>
@@ -110,4 +108,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginJury ;

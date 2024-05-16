@@ -92,11 +92,12 @@ const AddJurado = () => {
   };
 
   return (
+    <> <div className={styles.logo}>
+    <HeaderLogo />
+  </div>
     <div className={styles.page}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <HeaderLogo />
-        </div>
+       
         <div className={styles.containerForms}>
           <div className={styles.title}>
             <h1>Guardar Jurado</h1>
@@ -136,6 +137,7 @@ const AddJurado = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

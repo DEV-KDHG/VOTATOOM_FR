@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
-import Login from "./view/LoginAndRegister/Login/Login";
+
 import Register from "./view/LoginAndRegister/Register/RegisterAdmin";
 import Personero from "./view/TARJETAS/Personero";
 import HomeAdministraitor from "./view/ADMIN/HOME/HomeAdministraitor";
@@ -24,13 +24,19 @@ import BuscarPerson from "./view/ADMIN/candidates/Personero/BuscarEstuPerson";
 import AddStudents from "./view/ADMIN/Students/ADD/AddStudent"
 import PanelCargaAspirantes from "./view/ADMIN/candidates/panel/PanelCargaAspirantes";
 import AddJurado from "./view/ADMIN/JuryAd/AddJurado";
+import LoginJury from "./view/LoginAndRegister/LoginJury/LoginJury";
+import Login from "./view/LoginAndRegister/LoginAdmin/Login";
+import LoginStudents from "./view/LoginAndRegister/LoginStudents/LoginStudents";
+import ListRepresentatives from "./view/Students/ListRepresentatives";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login/>} />
+        <Route path="/LoginJury" element={<LoginJury/>} />
+        <Route path="/LoginStudents" element={<LoginStudents/>} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/personero" element={<Personero />} />
+        <Route path="/n" element={<Personero />} />
         <Route path="/AddStudents" element={<AddStudents/>} />
         <Route path="/Home" element={<HomeAdministraitor />} />
         <Route path="/Delete" element={<DeleteStudent />} />
@@ -41,6 +47,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <Route path="/listStudents" element={<ListStudents />} />
 
+        <Route path="/listRepresentatives" element={<ListRepresentatives />} />
         <Route path="/listStudentsGrade" element={<ListStudentsGrade/>} /> 
         <Route path="/searchStudents" element={<SearchStudents />} /> 
 
