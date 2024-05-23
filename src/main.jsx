@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
-
-
 import Register from "./view/LoginAndRegister/Register/RegisterAdmin";
 import Personero from "./view/TARJETAS/Personero";
 import HomeAdministraitor from "./view/ADMIN/HOME/HomeAdministraitor";
 import DeleteStudent from "./view/ADMIN/Students/Delete/DeleteStudents";
-
 import OptionalStudents from "./view/ADMIN/HOME/optionalStudents/OptionalStudents";
 import OptionalVeedor from "./view/ADMIN/HOME/optionalVeedor/OptionalVeedor";
 import ListStudents from "./view/ADMIN/Students/List/ListStudents";
@@ -28,10 +25,11 @@ import AddJurado from "./view/ADMIN/JuryAd/AddJurado";
 import LoginJury from "./view/LoginAndRegister/LoginJury/LoginJury";
 import Login from "./view/LoginAndRegister/LoginAdmin/Login";
 import LoginStudents from "./view/LoginAndRegister/LoginStudents/LoginStudents";
-import ListRepresentatives from "./view/Students/ListRepresentatives";
+
 
 import HeaderAdmin from "./Headers/HeaderAdmin";
 import HeaderLoguin from "./Headers/HeaderLoguin";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -47,12 +45,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Delete" element={<DeleteStudent />} />
         <Route path="/AddJury" element={<AddJurado/>} />
         <Route path="/OptionalStudents" element={<OptionalStudents />} />
-
+  
         <Route path="/OptionalVeedor" element={<OptionalVeedor/>} />
 
         <Route path="/listStudents" element={<ListStudents />} />
 
-        <Route path="/listRepresentatives" element={<ListRepresentatives />} />
+    
         <Route path="/listStudentsGrade" element={<ListStudentsGrade/>} /> 
         <Route path="/searchStudents" element={<SearchStudents />} /> 
 
