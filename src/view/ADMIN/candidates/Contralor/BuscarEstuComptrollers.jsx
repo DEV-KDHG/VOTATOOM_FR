@@ -9,7 +9,7 @@ import axios from 'axios';
 export const BuscarEstuComptrollers = () => {
 
         // Establecer el token JWT en el almacenamiento local
-        localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNjAyMjUsImV4cCI6MTcxNTE0NjYyNX0.llSQ0f0DjLPW-Kb8RqaQzd5-C-bKBjyPP4_FRuaNdU4H4AgOg1Axyxc1I91fr9rx');
+        //localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNjAyMjUsImV4cCI6MTcxNTE0NjYyNX0.llSQ0f0DjLPW-Kb8RqaQzd5-C-bKBjyPP4_FRuaNdU4H4AgOg1Axyxc1I91fr9rx');
 
         // Estado para almacenar los datos de los estudiantes
         const [datos, setDatos] = useState([]);

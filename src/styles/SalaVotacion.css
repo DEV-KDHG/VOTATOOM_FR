@@ -1,0 +1,24 @@
+.ContainerPrincipalSala {
+    margin-top: 3rem;
+}
+
+.botonDeVotacion{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.btnVotar{
+    height: 3rem;
+    width: 6rem;
+    transition: all 300ms;
+}
+
+.btnVotar:hover{
+    height: 3rem;
+    width: 8rem;
+    transform: scale(1.1);
+    font-size: 20px;
+    font-weight: 700;
+    
+}

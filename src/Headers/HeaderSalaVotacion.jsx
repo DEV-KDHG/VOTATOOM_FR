@@ -2,7 +2,7 @@ import React from "react"
 import "../Headers/HeaderAdmin.css"
 import { Link } from "react-router-dom";
 
-export const HeaderAdmin = () => {
+export const HeaderSalaVotacion = () => {
     return (
         <>
 
@@ -16,13 +16,13 @@ export const HeaderAdmin = () => {
                     <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item titulo">
-                                Sistema De Votación Escolar
+                                Sala de Votación | Urna Vitual
                             </li>
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item titulo"   >
                                 <Link to='/Home'>
-                                <img className="imgHome" src="src\assets\Home.svg" alt="inicio" />
+                                    <img className="imgHome" src="src\assets\Logout.svg" alt="inicio" />
                                 </Link>
                             </li>
                         </ul>
@@ -32,9 +32,9 @@ export const HeaderAdmin = () => {
 
 
 
-
         </>
     )
 }
 
-export default HeaderAdmin;
+
+export default HeaderSalaVotacion;
