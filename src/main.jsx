@@ -32,6 +32,7 @@ import ListRepresentatives from "./view/Students/ListRepresentatives";
 
 import HeaderAdmin from "./Headers/HeaderAdmin";
 import HeaderLoguin from "./Headers/HeaderLoguin";
+import SalaVotation from "./shared/SalaVotation/SalaVotation";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -67,6 +68,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path='/HeaderAdmi' element={<HeaderAdmin/>} ></Route>
 
         <Route path='/HeaderLogin' element={<HeaderLoguin/>}></Route>
+
+        <Route path='/SalaVotation' element={<SalaVotation/>}></Route>
         
       </Routes>
     </BrowserRouter>

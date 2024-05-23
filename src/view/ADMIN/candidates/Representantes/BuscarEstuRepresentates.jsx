@@ -9,7 +9,7 @@ import axios from 'axios'; // Importa axios
 export const BuscarEstuRepresentates = () => {
 
     // Establecer el token JWT en el almacenamiento local
-    localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNTI1NDgsImV4cCI6MTcxNTEzODk0OH0.EMdBILEuLIlRCP8IFDE7cA7eksLxyXqdpGPBUPH9SA9_M3D7Oaqw7FdcfZGDLWSd');
+    //localStorage.setItem('jwtToken', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6MSwic3ViIjoicHJ1ZWJhMTIzNDUiLCJpYXQiOjE3MTUwNTI1NDgsImV4cCI6MTcxNTEzODk0OH0.EMdBILEuLIlRCP8IFDE7cA7eksLxyXqdpGPBUPH9SA9_M3D7Oaqw7FdcfZGDLWSd');
 
     // Estado para almacenar los datos de los estudiantes
     const [datos, setDatos] = useState([]);
