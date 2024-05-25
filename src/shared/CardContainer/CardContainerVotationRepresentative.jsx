@@ -1,62 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-// import CardComponent from '../cardVotation/CardComponent';
-// import VotationServices from '../../services/VotationServices';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../../styles/CardStyles.css';
-// import defaultImage from '../../assets/perfil_vacio.png';
 
-// const CardContainerVotationRepresentative = () => {
-//   localStorage.setItem('jwtTokenStudens', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6Miwic3ViIjoiNzM3MjM1NTU1MjMzIiwiaWF0IjoxNzE2MzU3NTA5LCJleHAiOjE3MTY0NDM5MDl9.Lboc0Vcg3Ns3BPhL_n1w3Xj8MFfv2ifY8c8CjVZ6tb1nfq8NxE9AnSQ0xpmWjvFA');
-
-//   const [representatives, setRepresentatives] = useState([]);
-//   const [highlightedId, setHighlightedId] = useState(null);
-
-//   useEffect(() => {
-//     VotationServices.getAllRepresentativesByGrade()
-//       .then(response => {
-//         setRepresentatives(response.data);
-//         console.log(response.data);
-//       })
-//       .catch(error => {
-//         console.error("There was an error fetching the data!", error);
-//       });
-//   }, []);
-
-//   const handleButtonClick = (id) => {
-//     setHighlightedId(id);
-//     localStorage.setItem('idRepresentante', id); // Guardar el ID en localStorage
-//     console.log('Aqui esta el ID ' + id);
-//   };
-
-//   return (
-//     <div className="container mt-4">
-//       <div className="card-container-votation-wrapper">
-//           <div className='tituloComponente'><span>Representantes al consejo</span></div>
-
-//         <div className="row">
-//           {representatives.map(rep => (
-//             <div className="col-md-3" key={rep.id}>
-//               <CardComponent
-//                 image={rep.image || defaultImage}
-//                 name={rep.name}
-//                 lastName={rep.lastName}
-//                 grade={rep.grade}
-//                 group={rep.group}
-//                 buttonText="Seleccionar"
-//                 buttonClick={() => handleButtonClick(rep.id)}
-//                 isHighlighted={highlightedId === rep.id}
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-
-    
-//   );
-// };
-
-// export default CardContainerVotationRepresentative;
 import React, { useEffect, useState } from 'react';
 import CardComponent from '../cardVotation/CardComponent';
 import VotationServices from '../../services/VotationServices';
@@ -65,7 +7,7 @@ import '../../styles/CardStyles.css';
 import defaultImage from '../../assets/perfil_vacio.png';
 
 const CardContainerVotationRepresentative = () => {
-  localStorage.setItem('jwtTokenStudens', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6Miwic3ViIjoiNzM3MjM1NTU1MjMzIiwiaWF0IjoxNzE2NDM2MDY0LCJleHAiOjE3MTY1MjI0NjR9.yWW-4DLb5YldM5JyG5SFBqAtwIHKaLKPlH5AdLECZGicwPlyjKeXNYHuESlnH2sv');
+  // localStorage.setItem('jwtTokenStudens', 'eyJhbGciOiJIUzM4NCJ9.eyJpZGVudGlmaWNhdGlvbiI6Miwic3ViIjoiNzM3MjM1NTU1MjMzIiwiaWF0IjoxNzE2NDM2MDY0LCJleHAiOjE3MTY1MjI0NjR9.yWW-4DLb5YldM5JyG5SFBqAtwIHKaLKPlH5AdLECZGicwPlyjKeXNYHuESlnH2sv');
 
   const [representatives, setRepresentatives] = useState([]);
   const [highlightedId, setHighlightedId] = useState(null);
