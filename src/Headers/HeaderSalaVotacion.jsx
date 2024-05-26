@@ -21,7 +21,7 @@ export const HeaderSalaVotacion = () => {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item titulo"   >
-                                <Link to='/Home'>
+                                <Link to='/'>
                                     <img className="imgHome" src="src\assets\Logout.svg" alt="inicio" />
                                 </Link>
                             </li>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import CardContainerVotationController from "../CardContainer/CardContainerVotationController";
 import CardContainerVotationRepresentative from "../CardContainer/CardContainerVotationRepresentative";
 import CardContainerVotationPerson from "../CardContainer/CardContainerVotationPerson";
@@ -9,6 +10,7 @@ import Swal from "sweetalert2";
 
 export const SalaVotation = () => {
     const [error, setError] = useState(null);
+
 
     const handleVote = () => {
         const idRepresentante = localStorage.getItem('idRepresentative');
@@ -50,6 +52,8 @@ export const SalaVotation = () => {
                 localStorage.removeItem('idController');
                 localStorage.removeItem('idPerson');
 
+                // Redirigir a la ruta "/"
+                window.location.href ='/';
             })
             .catch(error => {
                 console.error("Hubo un error al registrar el voto:", error);
@@ -69,7 +73,7 @@ export const SalaVotation = () => {
             </div>
 
             <div className="botonDeVotacion">
-                <button className="btn btnVotar btn-success" onClick={handleVote}>VOTAR</button>
+                <a href="#" className="btn btnVotar btn-success" onClick={handleVote}>VOTAR</a>
             </div>
 
             {error && <div className="error-message">{error}</div>}
