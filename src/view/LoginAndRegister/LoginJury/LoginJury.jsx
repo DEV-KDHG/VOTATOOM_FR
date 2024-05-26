@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../LoginJury/LoginJury.module.css";
 import axios from "axios";
-import Swal from "sweetalert2"; // Importa SweetAlerts
+import Swal from "sweetalert2";
 import Inpunts from "../../../shared/inpunts/Inpunts";
 import Jtexfield from "../../../shared/labels/Jtexfield";
 import Buto from "../../../shared/buttons/Buto";
-import HeaderLogo from '../../../Header/HeaderLogo';
+
 import HeaderLoguin from "../../../Headers/HeaderLoguin";
 
 const LoginJury = () => {
@@ -14,6 +14,8 @@ const LoginJury = () => {
     username: "",
     password: "",
   });
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +34,8 @@ const LoginJury = () => {
       );
       if (response.status === 200) {
         const data = response.data;
-        localStorage.setItem("jwtToken", data.token);
-        console.log(data.token);
+        localStorage.setItem("juryJwtToken", data.token);
+        console.log(data.token1);
         // Mostrar alerta de éxito
         Swal.fire({
           icon: "success",
@@ -41,8 +43,8 @@ const LoginJury = () => {
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          // Redirección después de la alerta
           window.location.href = '/listStudentsGrade';
+    
         });
       } else {
         // Mostrar alerta de error
@@ -53,11 +55,10 @@ const LoginJury = () => {
         });
       }
     } catch (error) {
-    
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Error al procesar la solicitud, por favor vuelva a intentarlo " ,
+        text: "Error al procesar la solicitud, por favor vuelva a intentarlo",
       });
     }
   };
@@ -98,7 +99,6 @@ const LoginJury = () => {
                 </div>
                 <div className={styles.btn}>
                   <Buto name={"iniciar sesión"} type="submit" />
-                  
                 </div>
               </form>
             </div>
@@ -109,4 +109,4 @@ const LoginJury = () => {
   );
 };
 
-export default LoginJury ;
+export default LoginJury;

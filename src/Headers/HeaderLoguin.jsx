@@ -17,7 +17,7 @@ export const HeaderLoguin = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          <NavDropdown title="Loguin" id="basic-nav-dropdown" align="end">
+          <NavDropdown title="Login" id="basic-nav-dropdown" align="end">
             <NavDropdown.Item href="/">Estudiante</NavDropdown.Item>
             <NavDropdown.Item href="/LoginAdmin">Administrador</NavDropdown.Item>
             <NavDropdown.Item href="/LoginJury">Veedor</NavDropdown.Item>

@@ -17,7 +17,7 @@ const ListStudents = () => {
       try {
         const token = localStorage.getItem("jwtToken");
         const response = await axios.get(
-          `http://localhost:8080/api/v1/students1/students1/findAll?page=${currentPage}&size=${studentsPerPage}`,
+          `http://localhost:8080/api/v1/students1/findAll?page=${currentPage}&size=${studentsPerPage}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

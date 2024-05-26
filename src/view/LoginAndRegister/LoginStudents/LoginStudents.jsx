@@ -6,7 +6,7 @@ import Swal from "sweetalert2"; // Importa SweetAlerts
 import Inpunts from "../../../shared/inpunts/Inpunts";
 import Jtexfield from "../../../shared/labels/Jtexfield";
 import Buto from "../../../shared/buttons/Buto";
-import HeaderLogo from '../../../Header/HeaderLogo';
+
 import HeaderLoguin from "../../../Headers/HeaderLoguin";
 
 const LoginStudents = () => {
@@ -28,13 +28,13 @@ const LoginStudents = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v3/login/students",
+        "http://localhost:8080/api/v2/login/students",
         formData
       );
 
       if (response.status === 200) {
         const data = response.data;
-        localStorage.setItem("jwtToken", data.token);
+        localStorage.setItem("jwtTokenStudens", data.token);
 
         // Mostrar alerta de éxito
         Swal.fire({
@@ -43,11 +43,9 @@ const LoginStudents = () => {
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-            console.log("Datos enviados:", formData);
-          window.location.href = '/listRepresentatives'; // Reemplaza '/home' con tu URL de destino
+          window.location.href = '/SalaVotation'; // Reemplaza '/home' con tu URL de destino
         });
       } else {
-        console.log("Datos enviados:", formData);
         Swal.fire({
           icon: "error",
           title: "Error",
@@ -55,7 +53,6 @@ const LoginStudents = () => {
         });
       }
     } catch (error) {
-        console.log("Datos enviados:", formData);
       Swal.fire({
         icon: "error",
         title: "Error",

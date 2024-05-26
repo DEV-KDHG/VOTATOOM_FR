@@ -52,7 +52,7 @@ const AddStudents = () => {
           grade: formData.grade,
           identification: formData.identification,
           group: formData.group,
-          password: formData.password, // Incluye la contraseña en la solicitud
+          password: formData.identification, // Incluye la contraseña en la solicitud
         }
       );
 

@@ -1,17 +1,14 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import useAuthToken from "../../auth/useAuthToken";
 import Inpunts from "../../shared/inpunts/Inpunts";
 import Buto from "../../shared/buttons/Buto";
 import HeaderLogo from "../../Header/HeaderLogo";
 import styles from "./ListStudentsGrade.module.css";
-
-
+import useAuthTokenJury from "../../auth/useAuthTokenJury"; // Importamos la función para obtener el token de jury
 
 const ListStudentsGrade = () => {
-  const { authToken } = useAuthToken();
+  const { authTokenJury } = useAuthTokenJury(); // Obtenemos el token de jury
   const [students, setStudents] = useState([]);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,16 +18,18 @@ const ListStudentsGrade = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const token = localStorage.getItem("jwtToken");
         const response = await axios.get(
-          `http://localhost:8080/api/v1/students1/students1/findAll?page=${currentPage}&size=${studentsPerPage}`,
+          `http://localhost:8080/api/v1/students1/findAll`,
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${authTokenJury}`, 
+            
             },
           }
+          
         );
-
+        console.log(authTokenJury)
+console.log(response.data)
         setStudents(response.data);
         setError("");
       } catch (error) {
@@ -39,8 +38,8 @@ const ListStudentsGrade = () => {
       }
     };
 
-    fetchStudents();
-  }, [currentPage, studentsPerPage]);
+    fetchStudents(); // Realizar la llamada a la API al montar el componente
+  }, [authTokenJury]); // Añadimos authTokenJury como dependencia
 
   const handleInputChange = (e) => {
     setIdentification(e.target.value);
@@ -61,7 +60,7 @@ const ListStudentsGrade = () => {
         `http://localhost:8080/api/v1/students1/FindByIdentification/${identification}`,
         {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${authTokenJury}`,
           },
         }
       );
@@ -70,7 +69,7 @@ const ListStudentsGrade = () => {
         Swal.fire({
           icon: 'success',
           title: 'Estudiante encontrado',
-          text: `Nombre: ${response.data.name}, Apellido: ${response.data.lastName}`,
+          text: `Nombre: ${response.data.name}, Apellido: ${response.data.lastName}, codigo:${response.data.code} , identificación:${response.data.identification}`,  
         });
       } else {
         Swal.fire({
