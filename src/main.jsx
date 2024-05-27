@@ -30,6 +30,8 @@ import LoginStudents from "./view/LoginAndRegister/LoginStudents/LoginStudents";
 import HeaderAdmin from "./Headers/HeaderAdmin";
 import HeaderLoguin from "./Headers/HeaderLoguin";
 import SalaVotation from "./shared/SalaVotation/SalaVotation";
+import ListJury from "./view/ADMIN/JuryAd/ListJury/Listjury";
+import DeleteJury from "./view/ADMIN/JuryAd/DeleteJury/DeleteJury";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -50,7 +52,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/OptionalVeedor" element={<OptionalVeedor/>} />
 
         <Route path="/listStudents" element={<ListStudents />} />
-
+        <Route path="/listJury" element={<ListJury />} />
+        <Route path="/DeleteJury" element={<DeleteJury />} />
     
         <Route path="/listStudentsGrade" element={<ListStudentsGrade/>} /> 
         <Route path="/searchStudents" element={<SearchStudents />} /> 
