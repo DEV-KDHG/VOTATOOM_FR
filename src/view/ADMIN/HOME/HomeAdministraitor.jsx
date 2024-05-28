@@ -17,7 +17,7 @@ const HomeAdministraitor = () => {
             <CardFunctions  img="src\images\download-removebg-preview.png"  to={"/OptionalStudents"} name={"Estudiantes"} />
                       <CardFunctions img="src\images\Aspirante.png" to={"/PanelCargaAspirantes"} name={"Aspirante"} />
                       <CardFunctions img="src\images\Jury-removebg-preview (1).png" to={"/OptionalVeedor"} name={"Veedores"}/>
-                      <CardFunctions img="src/images/conteoDeVotos-removebg-preview.png" to={"/login"} name={"Conteo de votos"}/>
+                      <CardFunctions img="src/images/conteoDeVotos-removebg-preview.png" to={"/OptionalVotos"} name={"Conteo de votos"}/>
           </div>
         </div> 
       </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ESTUDIANTES_URL = "http://localhost:8080/api/v1/students1/students1/findAll";
+const ESTUDIANTES_URL = "http://localhost:8080/api/v1/students1/findAll";
 const BUSCAR_POR_IDENTIFICACION_URL = "http://localhost:8080/api/v1/students1/FindByIdentification/";
 
 const BUSCAR_ESTUDIANTES_10_Y_11_URL = "http://localhost:8080/api/v1/students1/students/findByGradeOf11and10";

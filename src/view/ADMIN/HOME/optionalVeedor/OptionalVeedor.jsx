@@ -51,7 +51,8 @@ const OptionalVeedor = () => {
               </svg>
             </div>
             <div className={style.optionItem}>
-              <LinksAcctions title={"Eliminar  un veedor"} to={"/testing"} />
+              <LinksAcctions title={"Eliminar  un veedor"} to={
+     "/DeleteJury"} />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -65,7 +66,7 @@ const OptionalVeedor = () => {
             </div>
 
             <div className={style.optionItem}>
-              <LinksAcctions title={"Listado de veedores"} to={"/testing"} />
+              <LinksAcctions title={"Listado de veedores"} to={"/listJury"} />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -86,3 +87,4 @@ const OptionalVeedor = () => {
 }
 
 export default OptionalVeedor
+

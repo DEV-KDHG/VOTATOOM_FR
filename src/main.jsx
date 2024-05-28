@@ -32,6 +32,11 @@ import HeaderLoguin from "./Headers/HeaderLoguin";
 import SalaVotation from "./shared/SalaVotation/SalaVotation";
 import ListJury from "./view/ADMIN/JuryAd/ListJury/Listjury";
 import DeleteJury from "./view/ADMIN/JuryAd/DeleteJury/DeleteJury";
+import Votes from "./view/ADMIN/Votes/VotePersonero";
+import VotesComptroller from "./view/ADMIN/Votes/VotesComptroller";
+import VotePersonero from "./view/ADMIN/Votes/VotePersonero";
+import OptionalVotos from "./view/ADMIN/HOME/optionalVotos/OptionalVotos";
+import VotesRepresentante from "./view/ADMIN/Votes/VotesRepresentante";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -48,16 +53,19 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Delete" element={<DeleteStudent />} />
         <Route path="/AddJury" element={<AddJurado/>} />
         <Route path="/OptionalStudents" element={<OptionalStudents />} />
-  
+    
+        <Route path="/OptionalVotos" element={<OptionalVotos/>} />
         <Route path="/OptionalVeedor" element={<OptionalVeedor/>} />
 
         <Route path="/listStudents" element={<ListStudents />} />
         <Route path="/listJury" element={<ListJury />} />
         <Route path="/DeleteJury" element={<DeleteJury />} />
-    
+        <Route path="/VotePersonero" element={<VotePersonero/>} />
+        <Route path="/VoteComptroller" element={<VotesComptroller />} />
+        <Route path="/VotesRepresentante" element={< VotesRepresentante />} /> 
         <Route path="/listStudentsGrade" element={<ListStudentsGrade/>} /> 
         <Route path="/searchStudents" element={<SearchStudents />} /> 
-
+       
         <Route path='/BuscarEstudiantesRepresentates' element={<BuscarEstuRepresentates />}></Route>
         <Route path='/representatesRegistrados' element={<RepresentativeStored />}></Route>
         <Route path='/BuscarEstudiantesContralores' element={<BuscarEstuComptrollers />}></Route>
