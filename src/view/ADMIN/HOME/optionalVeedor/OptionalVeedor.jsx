@@ -66,7 +66,7 @@ const OptionalVeedor = () => {
             </div>
 
             <div className={style.optionItem}>
-              <LinksAcctions title={"Listado de veedores"} to={"/listJury"} />
+              <LinksAcctions title={"Listado de veedores"} to={"/listJuryAll"} />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"

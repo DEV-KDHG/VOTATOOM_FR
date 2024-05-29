@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useAuthToken from "../../../../auth/useAuthToken";
 import "./ListJury.css";
-
+import { Link } from 'react-router-dom';
+import HeaderLogo from "../../../../Header/HeaderLogo";
 
 const ListJury = () => {
   const [juries, setJuries] = useState([]);
@@ -43,7 +44,9 @@ const ListJury = () => {
   const currentJuries = juries.slice(indexOfFirstJury, indexOfLastJury);
 
   return (
-    <div>
+    <>
+ 
+<div>
       {error && <p>{error}</p>}
       <div className="table-responsive">
         <table className="table table-striped">
@@ -98,7 +101,8 @@ const ListJury = () => {
           </li>
         </ul>
       </nav>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -37,6 +37,7 @@ import VotesComptroller from "./view/ADMIN/Votes/VotesComptroller";
 import VotePersonero from "./view/ADMIN/Votes/VotePersonero";
 import OptionalVotos from "./view/ADMIN/HOME/optionalVotos/OptionalVotos";
 import VotesRepresentante from "./view/ADMIN/Votes/VotesRepresentante";
+import ListAll from "./view/ADMIN/JuryAd/ListAllJury.jsx/ListAll";
 
 
 
@@ -63,6 +64,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <Route path="/listStudents" element={<ListStudents />} />
         <Route path="/listJury" element={<ListJury />} />
+        <Route path="/listJuryAll" element={<ListAll />} />
         <Route path="/DeleteJury" element={<DeleteJury />} />
         <Route path="/VotePersonero" element={<VotePersonero/>} />
         <Route path="/VoteComptroller" element={<VotesComptroller />} />
