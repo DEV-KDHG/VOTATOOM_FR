@@ -26,6 +26,7 @@ const CardContainerVotationRepresentative = () => {
   const handleButtonClick = (id) => {
     if (id !== null && id !== undefined) { // Validación general para IDs válidos
       setHighlightedId(id);
+      console.log('colorrr '+ id);
       localStorage.setItem('idRepresentative', id); // Guardar el ID en localStorage
       console.log('ID del Representante seleccionado: ' + id);
     } else {
