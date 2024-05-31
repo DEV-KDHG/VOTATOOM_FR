@@ -44,8 +44,8 @@ export const SalaVotation = () => {
                 Swal.fire({
                     icon:  "success",
                     title: "Votación Exitosa",
-                    text: "Voto registrado correctamente",
-                    timer: 3000
+                    text: "Voto registrado correctamente. Su sesión se cerrara automaticamente",
+                    timer: 5000
                 })
                 // Limpiar los IDs almacenados en localStorage después de enviar el voto
                 localStorage.removeItem('idRepresentante');
