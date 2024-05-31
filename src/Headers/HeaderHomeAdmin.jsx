@@ -2,7 +2,7 @@ import React from "react"
 import "../Headers/HeaderAdmin.css"
 import { Link } from "react-router-dom";
 
-export const HeaderAdmin = ({tituloHeader}) => {
+export const HeaderHomeAdmin = ({tituloHeader}) => {
     return (
         <>
 
@@ -21,8 +21,8 @@ export const HeaderAdmin = ({tituloHeader}) => {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item titulo"   >
-                                <Link to='/Home'>
-                                <img className="imgHome" src="src\assets\Home.svg" alt="inicio" />
+                                <Link to='/LoginAdmin'>
+                                <img className="imgHome" src="src\assets\Logout.svg" alt="Home" />
                                 </Link>
                             </li>
                         </ul>
@@ -37,4 +37,4 @@ export const HeaderAdmin = ({tituloHeader}) => {
     )
 }
 
-export default HeaderAdmin;
+export default HeaderHomeAdmin;

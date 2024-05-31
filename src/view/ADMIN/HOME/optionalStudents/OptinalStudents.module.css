@@ -1,7 +1,4 @@
-.bod
-{
-    margin-top: 2vw;
-}
+
 .container
 {
     display:flex;
@@ -9,6 +6,7 @@
     justify-content: center;
     align-items: center;
     height: 70vh;
+    margin-top: 1.5rem;
     
     
  

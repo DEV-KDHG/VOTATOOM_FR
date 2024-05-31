@@ -1,9 +1,9 @@
-body {
-  background-color: #d3d3d3;
-}
+
 
 .page {
+  margin-top: 1.5rem;
   background-color: #d3d3d3;
+
 
   display: flex;
   justify-content: center;

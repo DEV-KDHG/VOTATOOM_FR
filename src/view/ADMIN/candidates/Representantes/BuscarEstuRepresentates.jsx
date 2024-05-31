@@ -5,6 +5,7 @@ import RepresentativeService from '../../../../services/RepresentativeService';
 import Swal from 'sweetalert2';
 import StudentService from '../../../../services/StudentService';
 import axios from 'axios'; // Importa axios
+import HeaderAtras from '../../../../Headers/HeaderAtras'
 
 export const BuscarEstuRepresentates = () => {
 
@@ -76,6 +77,10 @@ export const BuscarEstuRepresentates = () => {
     };
 
     return (
+        <>
+    
+        <HeaderAtras route="/PanelCargaAspirantes" tituloHeader='Buscar Estudiantes'/>
+
         <div className="container">
             <div className='titulo'>
                 <h2>Buscar Estudiante Representante al Consejo</h2>
@@ -132,6 +137,9 @@ export const BuscarEstuRepresentates = () => {
                 </div>
             </div>
         </div>
+    
+    
+</>
     );
 };
 

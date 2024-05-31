@@ -8,6 +8,7 @@ import Buto from "../../../../shared/buttons/Buto";
 import ListStudents from "../List/ListStudents";
 import HeaderLogo from '../../../../Header/HeaderLogo';
 import styles from './Delete.module.css';
+import HeaderAtras from "../../../../Headers/HeaderAtras";
 
 const DeleteStudent = () => {
   const { authToken } = useAuthToken(); // Obtiene el token de autenticación del hook useAuthToken
@@ -58,33 +59,33 @@ const DeleteStudent = () => {
   };
 
   return (
-    <><div className="styles.page">
-     <div className={styles.container}>
-    <div className={styles.logo}>
-          <HeaderLogo/>
-        </div >
+    <>
+    <HeaderAtras route="/OptionalStudents" tituloHeader='Eliminar Estudiante'/>
+    <div className="styles.page">
+      <div className={styles.container}>
+
         <div className={styles.title}> <h2>Eliminar Estudiante por Identificación</h2></div>
         <div className={styles.containerForms}>
-         
-      <Inpunts
-        type="text"
-        placeholder="Identificación del estudiante"
-        value={identification}
-        onChange={handleInputChange}
-      />
-      <Buto onClick={handleDelete}name="Eliminar Estudiante"></Buto>
-      <div className={styles.ListStudents}>
 
-<ListStudents/>
-</div>
+          <Inpunts
+            type="text"
+            placeholder="Identificación del estudiante"
+            value={identification}
+            onChange={handleInputChange}
+          />
+          <Buto onClick={handleDelete} name="Eliminar Estudiante"></Buto>
+          <div className={styles.ListStudents}>
+
+            <ListStudents />
+          </div>
+        </div>
+        <div>
+
+        </div>
       </div>
-      <div>
-     
-      </div>
-      </div> 
-      </div>
+    </div>
     </>
-    
+
   );
 };
 

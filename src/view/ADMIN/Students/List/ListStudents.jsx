@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useAuthToken from "../../../../auth/useAuthToken";
 import "./ListStudents.css";
-import HeaderLogo from "../../../../Header/HeaderLogo";
 
 const ListStudents = () => {
   const [students, setStudents] = useState([]);

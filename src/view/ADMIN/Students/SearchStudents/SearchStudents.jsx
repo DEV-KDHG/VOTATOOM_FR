@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import HeaderAtras from "../../../../Headers/HeaderAtras";
 import Swal from "sweetalert2";
 
 
@@ -66,32 +67,33 @@ const SearchStudents = () => {
   };
 
   return (
-    <div className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <HeaderLogo/>
-        </div>
-        <div className={styles.title}>
-          <h2>Buscar Estudiante por Identificación</h2>
-        </div>
-        <div className={styles.containerForms}>
-          <Inpunts
-            type="text"
-            placeholder="Identificación del estudiante"
-            value={identification}
-            onChange={handleInputChange}
-          />
-          <Buto onClick={handleSearch} name="Buscar Estudiante"></Buto>
-        </div>
+    <>
+    <HeaderAtras route="/OptionalStudents" tituloHeader='Buscar Estudiante'/>
+      <div className={styles.page}>
+        <div className={styles.container}>
 
-        <div>
+          <div className={styles.title}>
+            <h2>Buscar Estudiante por Identificación</h2>
+          </div>
+          <div className={styles.containerForms}>
+            <Inpunts
+              type="text"
+              placeholder="Identificación del estudiante"
+              value={identification}
+              onChange={handleInputChange}
+            />
+            <Buto onClick={handleSearch} name="Buscar Estudiante"></Buto>
+          </div>
 
-        <ListStudents/>
+          <div>
 
+            <ListStudents />
+
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default  SearchStudents;
+export default SearchStudents;

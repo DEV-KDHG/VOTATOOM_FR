@@ -27,7 +27,7 @@ body {
   }
   .containerForms {
     background-color: #d3d3d3;
-    padding: 4rem;
+    padding: 1rem;
     border: 2rem;
   }
   
@@ -61,7 +61,7 @@ body {
     font-family: "Times New Roman", Times, serif;
     padding: 0.5rem;
     border-color: white;
-    margin-top: 2em;
+    margin-top: 1em;
     border-radius: 2rem;
   }
    select {

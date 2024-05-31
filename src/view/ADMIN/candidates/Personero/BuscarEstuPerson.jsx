@@ -4,6 +4,7 @@ import "../../../../styles/BuscarEstuRepresentates.css"
 import Swal from 'sweetalert2';
 import PersonService from '../../../../services/PersonService'
 import StudentService from '../../../../services/StudentService';
+import HeaderAtras from '../../../../Headers/HeaderAtras'
 
 export const BuscarPerson = () => {
 
@@ -93,70 +94,74 @@ export const BuscarPerson = () => {
 
 
     return (
-        <div className="container">
-            {/* Encabezado del componente */}
-            <div className='titulo'>
-                <h2>Buscar Estudiante Representante a la Personeria</h2>
-                {/* <a className='imagen' href="#"><img className='img' src="src\assets\eye.svg" alt="Representantes" /></a> */}
-                <Link to='/PersonerosRegistrados' className='imagen'>
-                    <img className='img' src="src\assets\eye.svg" alt="Representantes" />
-                </Link>
+        <>
+            <HeaderAtras route="/PanelCargaAspirantes" tituloHeader='Buscar Estudiantes Personeria'/>
+            <div className="container">
+                {/* Encabezado del componente */}
+                <div className='titulo'>
+                    <h2>Buscar Estudiante Representante a la Personeria</h2>
+                    {/* <a className='imagen' href="#"><img className='img' src="src\assets\eye.svg" alt="Representantes" /></a> */}
+                    <Link to='/PersonerosRegistrados' className='imagen'>
+                        <img className='img' src="src\assets\eye.svg" alt="Representantes" />
+                    </Link>
 
-            </div>
-            {/* Barra de búsqueda */}
-            <div className="container-browser">
-                <div className="input-group mb-3">
-                    <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Digite numero identificacion del estudiante..."
-                        value={identificacion}
-                        onChange={(e) => setIdentificacion(e.target.value)}
-                    />
-                    <button
-                        className="btn btn-outline-secondary"
-                        type="button"
-                        onClick={buscarEstudiantePorIdentificacion}
-                    >
-                        Buscar
-                    </button>
                 </div>
-            </div>
-            {/* Tabla de datos */}
-            <div className="container-tabla-datos">
-                <table className="table rounded table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th>N°</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Identificación</th>
-                            <th>Grado</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* Mapeo de los datos para mostrarlos en la tabla */}
-                        {datos.slice(indiceInicial, indiceInicial + registrosPorPagina).map((dato, index) => (
-                            <tr key={indiceInicial + index}>
-                                <td>{indiceInicial + index + 1}</td>
-                                <td>{dato.name}</td>
-                                <td>{dato.lastName}</td>
-                                <td>{dato.identification}</td>
-                                <td>{dato.grade}</td>
-                                {/* Botón para registrar el representante */}
-                                <td><button type="button" className="btn btn-success btn-sm" onClick={() => registrarPerson(dato.identification)}>Registrar</button></td>
+                {/* Barra de búsqueda */}
+                <div className="container-browser">
+                    <div className="input-group mb-3">
+                        <input
+                            type="number"
+                            className="form-control"
+                            placeholder="Digite numero identificacion del estudiante..."
+                            value={identificacion}
+                            onChange={(e) => setIdentificacion(e.target.value)}
+                        />
+                        <button
+                            className="btn btn-outline-secondary"
+                            type="button"
+                            onClick={buscarEstudiantePorIdentificacion}
+                        >
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                {/* Tabla de datos */}
+                <div className="container-tabla-datos">
+                    <table className="table rounded table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Identificación</th>
+                                <th>Grado</th>
+                                <th>Acción</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                {/* Paginación */}
-                <div className="paginacion">
-                    <button className="btn btn-primary btn-sm" onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
-                    <button className="btn btn-danger btn-sm" onClick={siguientePagina} disabled={datos.length <= (paginaActual * registrosPorPagina)}>Siguiente</button>
+                        </thead>
+                        <tbody>
+                            {/* Mapeo de los datos para mostrarlos en la tabla */}
+                            {datos.slice(indiceInicial, indiceInicial + registrosPorPagina).map((dato, index) => (
+                                <tr key={indiceInicial + index}>
+                                    <td>{indiceInicial + index + 1}</td>
+                                    <td>{dato.name}</td>
+                                    <td>{dato.lastName}</td>
+                                    <td>{dato.identification}</td>
+                                    <td>{dato.grade}</td>
+                                    {/* Botón para registrar el representante */}
+                                    <td><button type="button" className="btn btn-success btn-sm" onClick={() => registrarPerson(dato.identification)}>Registrar</button></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    {/* Paginación */}
+                    <div className="paginacion">
+                        <button className="btn btn-primary btn-sm" onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
+                        <button className="btn btn-danger btn-sm" onClick={siguientePagina} disabled={datos.length <= (paginaActual * registrosPorPagina)}>Siguiente</button>
+                    </div>
                 </div>
             </div>
-        </div>
+
+        </>
     );
 
 }

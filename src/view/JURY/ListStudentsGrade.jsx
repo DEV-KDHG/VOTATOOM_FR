@@ -3,7 +3,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Inpunts from "../../shared/inpunts/Inpunts";
 import Buto from "../../shared/buttons/Buto";
-import HeaderLogo from "../../Header/HeaderLogo";
+// import HeaderLogo from "../../Header/HeaderLogo";
+import HeaderJury from "../../Headers/HeaderJury";
 import styles from "./ListStudentsGrade.module.css";
 import useAuthTokenJury from "../../auth/useAuthTokenJury"; // Importamos la función para obtener el token de jury
 
@@ -28,13 +29,13 @@ const ListStudentsGrade = () => {
           }
           
         );
-        console.log(authTokenJury)
+        // console.log(authTokenJury)
 console.log(response.data)
         setStudents(response.data);
         setError("");
       } catch (error) {
         console.error("Error en la solicitud:", error);
-        setError("Error al cargar estudiantes: " + error.message);
+        // setError("Error al cargar estudiantes: " + error.message);
       }
     };
 
@@ -69,7 +70,7 @@ console.log(response.data)
         Swal.fire({
           icon: 'success',
           title: 'Estudiante encontrado',
-          text: `Nombre: ${response.data.name}, Apellido: ${response.data.lastName}, codigo:${response.data.code} , identificación:${response.data.identification}`,  
+          text: `Nombre: ${response.data.name}, Apellido: ${response.data.lastName}, codigo: ${response.data.code} , identificación: ${response.data.identification}`,  
         });
       } else {
         Swal.fire({
@@ -98,10 +99,13 @@ console.log(response.data)
   return (
     <div className={styles.page}>
       <div className={styles.logo}>
-        <HeaderLogo />
+        {/* <HeaderLogo /> */}
+        <HeaderJury/>
       </div>
+    
       <div className={styles.title}>
         <h2>Buscar Estudiante por Identificación</h2>
+  
       </div>
       <div className={styles.containerForms}>
         <Inpunts

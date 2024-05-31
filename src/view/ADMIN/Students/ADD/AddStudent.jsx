@@ -7,6 +7,7 @@ import Inpunts from "../../../../shared/inpunts/Inpunts";
 import Buto from "../../../../shared/buttons/Buto";
 import styles from "../ADD/AddStudents.module.css"
 import useAuthToken from "../../../../auth/useAuthToken";
+import HeaderAtras from "../../../../Headers/HeaderAtras";
 const AddStudents = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -90,80 +91,82 @@ const AddStudents = () => {
   };
 
   return (
-    <div className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <HeaderLogo />
-        </div>
-        <div className={styles.containerForms}>
-          <div className={styles.title}>
-            <h1>Guardar Estudiante</h1>
+
+    <>
+    <HeaderAtras route="/OptionalStudents" tituloHeader='Registrar Estudiante'/>
+      <div className={styles.page}>
+        <div className={styles.container}>
+        
+          <div className={styles.containerForms}>
+            <div className={styles.title}>
+              <h1>Guardar Estudiante</h1>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className={styles.inps}>
+                <Jtexfield name="Nombre" />
+                <Inpunts
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className={styles.inps}>
+                <Jtexfield name="Apellido" />
+                <Inpunts
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className={styles.inps}>
+                <Jtexfield name="Identificación" />
+                <Inpunts
+                  type="text"
+                  name="identification"
+                  value={formData.identification}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className={styles.inps}>
+                <Jtexfield name="Grado" />
+                <select
+                  name="grade"
+                  value={formData.grade}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Selecciona el Grado</option>
+                  {Array.from({ length: 11 }, (_, index) => (
+                    <option key={index + 1} value={index + 1}>
+                      {index + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className={styles.inps}>
+                <Jtexfield name="Grupo" />
+                <select
+                  name="group"
+                  value={formData.group}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Selecciona el Grupo</option>
+                  {Array.from({ length: 4 }, (_, index) => (
+                    <option key={index + 1} value={index + 1}>
+                      {index + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className={styles.btn}>
+                <Buto name="Guardar Estudiante" type="submit" />
+              </div>
+            </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div className={styles.inps}>
-              <Jtexfield name="Nombre" />
-              <Inpunts
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className={styles.inps}>
-              <Jtexfield name="Apellido" />
-              <Inpunts
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className={styles.inps}>
-              <Jtexfield name="Identificación" />
-              <Inpunts
-                type="text"
-                name="identification"
-                value={formData.identification}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className={styles.inps}>
-              <Jtexfield name="Grado" />
-              <select
-                name="grade"
-                value={formData.grade}
-                onChange={handleInputChange}
-              >
-                <option value="">Selecciona el Grado</option>
-                {Array.from({ length: 11 }, (_, index) => (
-                  <option key={index + 1} value={index + 1}>
-                    {index + 1}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className={styles.inps}>
-              <Jtexfield name="Grupo" />
-              <select
-                name="group"
-                value={formData.group}
-                onChange={handleInputChange}
-              >
-                <option value="">Selecciona el Grupo</option>
-                {Array.from({ length: 4 }, (_, index) => (
-                  <option key={index + 1} value={index + 1}>
-                    {index + 1}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className={styles.btn}>
-              <Buto name="Guardar Estudiante" type="submit" />
-            </div>
-          </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

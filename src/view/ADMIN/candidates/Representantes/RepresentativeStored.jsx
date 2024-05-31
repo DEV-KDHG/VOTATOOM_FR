@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../../../../styles/BuscarEstuRepresentates.css"
 import RepresentativeService from '../../../../services/RepresentativeService';
 import Swal from 'sweetalert2';
+import HeaderAtras from '../../../../Headers/HeaderAtras'
 
 export const RepresentativeStored = () => {
 
@@ -68,69 +69,73 @@ export const RepresentativeStored = () => {
     };
 
     return (
-        <div className="container">
-            <div className='titulo'>
-                <h2>Representantes Registrados</h2>
-            </div>
-            <div className="container-browser">
-                <div className="input-group mb-3">
-                    <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Digite número de identificación del representante..."
-                        value={identificacion}
-                        onChange={(e) => setIdentificacion(e.target.value)}
-                    />
-                    <button
-                        className="btn btn-outline-secondary"
-                        type="button"
-                        onClick={buscarRepresentantePorIdentificacion}
-                    >
-                        Buscar
-                    </button>
+        <>
+        <HeaderAtras route="/BuscarEstudiantesRepresentates" tituloHeader='Aspirantes Consejo'/>
+            <div className="container">
+                <div className='titulo'>
+                    <h2>Representantes Registrados</h2>
                 </div>
-            </div>
-            <div className="container-tabla-datos">
-                <table className="table rounded table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th>N°</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Identificación</th>
-                            <th>Grado</th>
-                            <th>Grupo</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {datos.slice(indiceInicial, indiceInicial + registrosPorPagina).map((dato, index) => (
-                            <tr key={indiceInicial + index}>
-                                <td>{indiceInicial + index + 1}</td>
-                                <td>{dato.name}</td>
-                                <td>{dato.lastName}</td>
-                                <td>{dato.identification}</td>
-                                <td>{dato.grade}</td>
-                                <td>{dato.group}</td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        className="btn btn-danger btn-sm"
-                                        onClick={() => eliminarRepresentantePorIdentificacion(dato.identification)}
-                                    >
-                                        Eliminar
-                                    </button>
-                                </td>
+                <div className="container-browser">
+                    <div className="input-group mb-3">
+                        <input
+                            type="number"
+                            className="form-control"
+                            placeholder="Digite número de identificación del representante..."
+                            value={identificacion}
+                            onChange={(e) => setIdentificacion(e.target.value)}
+                        />
+                        <button
+                            className="btn btn-outline-secondary"
+                            type="button"
+                            onClick={buscarRepresentantePorIdentificacion}
+                        >
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <div className="container-tabla-datos">
+                    <table className="table rounded table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Identificación</th>
+                                <th>Grado</th>
+                                <th>Grupo</th>
+                                <th>Acción</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <div className="paginacion">
-                    <button className="btn btn-primary btn-sm" onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
-                    <button className="btn btn-danger btn-sm" onClick={siguientePagina} disabled={datos.length <= (paginaActual * registrosPorPagina)}>Siguiente</button>
+                        </thead>
+                        <tbody>
+                            {datos.slice(indiceInicial, indiceInicial + registrosPorPagina).map((dato, index) => (
+                                <tr key={indiceInicial + index}>
+                                    <td>{indiceInicial + index + 1}</td>
+                                    <td>{dato.name}</td>
+                                    <td>{dato.lastName}</td>
+                                    <td>{dato.identification}</td>
+                                    <td>{dato.grade}</td>
+                                    <td>{dato.group}</td>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            className="btn btn-danger btn-sm"
+                                            onClick={() => eliminarRepresentantePorIdentificacion(dato.identification)}
+                                        >
+                                            Eliminar
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <div className="paginacion">
+                        <button className="btn btn-primary btn-sm" onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
+                        <button className="btn btn-danger btn-sm" onClick={siguientePagina} disabled={datos.length <= (paginaActual * registrosPorPagina)}>Siguiente</button>
+                    </div>
                 </div>
             </div>
-        </div>
+
+        </>
     );
 };
 

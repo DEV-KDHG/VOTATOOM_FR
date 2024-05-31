@@ -3,13 +3,14 @@ import HeaderLogo from "../../../Header/HeaderLogo";
 import CardFunctions from "../../../shared/cardFunctions/CardFunctions";
 import { Link } from 'react-router-dom'; 
 import style from "../HOME/HomeAdministraitor.module.css"
-import HeaderAdmin from "../../../Headers/HeaderAdmin";
+import HeaderHomeAdmin from "../../../Headers/HeaderHomeAdmin";
+
 
 const HomeAdministraitor = () => {
  return (
     <>
       <div className={style.container}>
-      <HeaderAdmin/>
+      <HeaderHomeAdmin tituloHeader='Home'/>
     
        <div className={style.title}>
           <h1> Home Administrador</h1>

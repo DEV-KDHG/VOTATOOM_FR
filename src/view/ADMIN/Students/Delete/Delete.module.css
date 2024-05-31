@@ -5,6 +5,7 @@ body, .page, .containerForms {
   .container {
     height: 10vh;
     margin: 0 auto;
+    margin-top: 1.2rem;
   }
   
   .title {
